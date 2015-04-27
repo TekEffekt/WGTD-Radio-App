@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B60651FA1AC31550008300D8 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60651F91AC31550008300D8 /* InfoViewController.m */; };
 		B60E52F11ABFB0CB0019505B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E52F01ABFB0CB0019505B /* main.m */; };
 		B60E52F41ABFB0CB0019505B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E52F31ABFB0CB0019505B /* AppDelegate.m */; };
 		B60E52F71ABFB0CB0019505B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E52F61ABFB0CB0019505B /* ViewController.m */; };
@@ -14,6 +15,25 @@
 		B60E52FC1ABFB0CB0019505B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B60E52FB1ABFB0CB0019505B /* Images.xcassets */; };
 		B60E52FF1ABFB0CB0019505B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60E52FD1ABFB0CB0019505B /* LaunchScreen.xib */; };
 		B60E530B1ABFB0CC0019505B /* WGTD_Radio_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E530A1ABFB0CC0019505B /* WGTD_Radio_AppTests.m */; };
+		B60E53511ABFB96D0019505B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60E53501ABFB96D0019505B /* AVFoundation.framework */; };
+		B60E53531ABFB97A0019505B /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60E53521ABFB97A0019505B /* GLKit.framework */; };
+		B60E53551ABFB9800019505B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60E53541ABFB9800019505B /* AudioToolbox.framework */; };
+		B60E53571ABFB98B0019505B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60E53561ABFB98B0019505B /* CoreGraphics.framework */; };
+		B60E53591ABFB9940019505B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60E53581ABFB9940019505B /* UIKit.framework */; };
+		B60E535B1ABFB99A0019505B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60E535A1ABFB9990019505B /* Foundation.framework */; };
+		B60E53B51ABFE14A0019505B /* NSMutableArray+STKAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E53A31ABFE14A0019505B /* NSMutableArray+STKAudioPlayer.m */; };
+		B60E53B61ABFE14A0019505B /* STKAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E53A51ABFE14A0019505B /* STKAudioPlayer.m */; };
+		B60E53B71ABFE14A0019505B /* STKAutoRecoveringHTTPDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E53A71ABFE14A0019505B /* STKAutoRecoveringHTTPDataSource.m */; };
+		B60E53B81ABFE14A0019505B /* STKCoreFoundationDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E53A91ABFE14A0019505B /* STKCoreFoundationDataSource.m */; };
+		B60E53B91ABFE14A0019505B /* STKDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E53AB1ABFE14A0019505B /* STKDataSource.m */; };
+		B60E53BA1ABFE14A0019505B /* STKDataSourceWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E53AD1ABFE14A0019505B /* STKDataSourceWrapper.m */; };
+		B60E53BB1ABFE14A0019505B /* STKHTTPDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E53AF1ABFE14A0019505B /* STKHTTPDataSource.m */; };
+		B60E53BC1ABFE14A0019505B /* STKLocalFileDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E53B11ABFE14A0019505B /* STKLocalFileDataSource.m */; };
+		B60E53BD1ABFE14A0019505B /* STKQueueEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E53B31ABFE14A0019505B /* STKQueueEntry.m */; };
+		B60E53C31ABFF01E0019505B /* WaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E53C21ABFF01E0019505B /* WaveView.m */; };
+		B60E53C51ABFFF440019505B /* stream.m3u in Resources */ = {isa = PBXBuildFile; fileRef = B60E53C41ABFFF440019505B /* stream.m3u */; };
+		B63F05971ADB0E450040168F /* broadwave.m3u in Resources */ = {isa = PBXBuildFile; fileRef = B63F05961ADB0E450040168F /* broadwave.m3u */; };
+		B63F05991ADB0E4A0040168F /* broadwave (1).m3u in Resources */ = {isa = PBXBuildFile; fileRef = B63F05981ADB0E4A0040168F /* broadwave (1).m3u */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B60651F21AC31268008300D8 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		B60651F31AC31268008300D8 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		B60651F81AC31550008300D8 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		B60651F91AC31550008300D8 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		B60E52EB1ABFB0CB0019505B /* WGTD Radio App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WGTD Radio App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60E52EF1ABFB0CB0019505B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B60E52F01ABFB0CB0019505B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +64,36 @@
 		B60E53041ABFB0CB0019505B /* WGTD Radio AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WGTD Radio AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60E53091ABFB0CC0019505B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B60E530A1ABFB0CC0019505B /* WGTD_Radio_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGTD_Radio_AppTests.m; sourceTree = "<group>"; };
+		B60E53501ABFB96D0019505B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B60E53521ABFB97A0019505B /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		B60E53541ABFB9800019505B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B60E53561ABFB98B0019505B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B60E53581ABFB9940019505B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B60E535A1ABFB9990019505B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B60E53A21ABFE14A0019505B /* NSMutableArray+STKAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+STKAudioPlayer.h"; sourceTree = "<group>"; };
+		B60E53A31ABFE14A0019505B /* NSMutableArray+STKAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+STKAudioPlayer.m"; sourceTree = "<group>"; };
+		B60E53A41ABFE14A0019505B /* STKAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKAudioPlayer.h; sourceTree = "<group>"; };
+		B60E53A51ABFE14A0019505B /* STKAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKAudioPlayer.m; sourceTree = "<group>"; };
+		B60E53A61ABFE14A0019505B /* STKAutoRecoveringHTTPDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKAutoRecoveringHTTPDataSource.h; sourceTree = "<group>"; };
+		B60E53A71ABFE14A0019505B /* STKAutoRecoveringHTTPDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKAutoRecoveringHTTPDataSource.m; sourceTree = "<group>"; };
+		B60E53A81ABFE14A0019505B /* STKCoreFoundationDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKCoreFoundationDataSource.h; sourceTree = "<group>"; };
+		B60E53A91ABFE14A0019505B /* STKCoreFoundationDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKCoreFoundationDataSource.m; sourceTree = "<group>"; };
+		B60E53AA1ABFE14A0019505B /* STKDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKDataSource.h; sourceTree = "<group>"; };
+		B60E53AB1ABFE14A0019505B /* STKDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKDataSource.m; sourceTree = "<group>"; };
+		B60E53AC1ABFE14A0019505B /* STKDataSourceWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKDataSourceWrapper.h; sourceTree = "<group>"; };
+		B60E53AD1ABFE14A0019505B /* STKDataSourceWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKDataSourceWrapper.m; sourceTree = "<group>"; };
+		B60E53AE1ABFE14A0019505B /* STKHTTPDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKHTTPDataSource.h; sourceTree = "<group>"; };
+		B60E53AF1ABFE14A0019505B /* STKHTTPDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKHTTPDataSource.m; sourceTree = "<group>"; };
+		B60E53B01ABFE14A0019505B /* STKLocalFileDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKLocalFileDataSource.h; sourceTree = "<group>"; };
+		B60E53B11ABFE14A0019505B /* STKLocalFileDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKLocalFileDataSource.m; sourceTree = "<group>"; };
+		B60E53B21ABFE14A0019505B /* STKQueueEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKQueueEntry.h; sourceTree = "<group>"; };
+		B60E53B31ABFE14A0019505B /* STKQueueEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKQueueEntry.m; sourceTree = "<group>"; };
+		B60E53B41ABFE14A0019505B /* StreamingKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StreamingKit-Prefix.pch"; sourceTree = "<group>"; };
+		B60E53C11ABFF01E0019505B /* WaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveView.h; sourceTree = "<group>"; };
+		B60E53C21ABFF01E0019505B /* WaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaveView.m; sourceTree = "<group>"; };
+		B60E53C41ABFFF440019505B /* stream.m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream.m3u; sourceTree = "<group>"; };
+		B63F05961ADB0E450040168F /* broadwave.m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = broadwave.m3u; sourceTree = "<group>"; };
+		B63F05981ADB0E4A0040168F /* broadwave (1).m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "broadwave (1).m3u"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +101,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B60E535B1ABFB99A0019505B /* Foundation.framework in Frameworks */,
+				B60E53591ABFB9940019505B /* UIKit.framework in Frameworks */,
+				B60E53571ABFB98B0019505B /* CoreGraphics.framework in Frameworks */,
+				B60E53551ABFB9800019505B /* AudioToolbox.framework in Frameworks */,
+				B60E53531ABFB97A0019505B /* GLKit.framework in Frameworks */,
+				B60E53511ABFB96D0019505B /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +123,12 @@
 		B60E52E21ABFB0CB0019505B = {
 			isa = PBXGroup;
 			children = (
+				B60E535A1ABFB9990019505B /* Foundation.framework */,
+				B60E53581ABFB9940019505B /* UIKit.framework */,
+				B60E53561ABFB98B0019505B /* CoreGraphics.framework */,
+				B60E53541ABFB9800019505B /* AudioToolbox.framework */,
+				B60E53521ABFB97A0019505B /* GLKit.framework */,
+				B60E53501ABFB96D0019505B /* AVFoundation.framework */,
 				B60E52ED1ABFB0CB0019505B /* WGTD Radio App */,
 				B60E53071ABFB0CC0019505B /* WGTD Radio AppTests */,
 				B60E52EC1ABFB0CB0019505B /* Products */,
@@ -81,11 +147,17 @@
 		B60E52ED1ABFB0CB0019505B /* WGTD Radio App */ = {
 			isa = PBXGroup;
 			children = (
+				B60E53A11ABFE14A0019505B /* StreamingKit */,
+				B60E533E1ABFB26B0019505B /* Views */,
+				B60E53C41ABFFF440019505B /* stream.m3u */,
+				B63F05981ADB0E4A0040168F /* broadwave (1).m3u */,
+				B63F05961ADB0E450040168F /* broadwave.m3u */,
 				B60E52F21ABFB0CB0019505B /* AppDelegate.h */,
 				B60E52F31ABFB0CB0019505B /* AppDelegate.m */,
-				B60E52F51ABFB0CB0019505B /* ViewController.h */,
-				B60E52F61ABFB0CB0019505B /* ViewController.m */,
+				B60E533F1ABFB27D0019505B /* View Controllers */,
 				B60E52F81ABFB0CB0019505B /* Main.storyboard */,
+				B60651F21AC31268008300D8 /* InfoViewController.h */,
+				B60651F31AC31268008300D8 /* InfoViewController.m */,
 				B60E52FB1ABFB0CB0019505B /* Images.xcassets */,
 				B60E52FD1ABFB0CB0019505B /* LaunchScreen.xib */,
 				B60E52EE1ABFB0CB0019505B /* Supporting Files */,
@@ -117,6 +189,52 @@
 				B60E53091ABFB0CC0019505B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B60E533E1ABFB26B0019505B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B60E53C11ABFF01E0019505B /* WaveView.h */,
+				B60E53C21ABFF01E0019505B /* WaveView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B60E533F1ABFB27D0019505B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B60E52F51ABFB0CB0019505B /* ViewController.h */,
+				B60E52F61ABFB0CB0019505B /* ViewController.m */,
+				B60651F81AC31550008300D8 /* InfoViewController.h */,
+				B60651F91AC31550008300D8 /* InfoViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B60E53A11ABFE14A0019505B /* StreamingKit */ = {
+			isa = PBXGroup;
+			children = (
+				B60E53A21ABFE14A0019505B /* NSMutableArray+STKAudioPlayer.h */,
+				B60E53A31ABFE14A0019505B /* NSMutableArray+STKAudioPlayer.m */,
+				B60E53A41ABFE14A0019505B /* STKAudioPlayer.h */,
+				B60E53A51ABFE14A0019505B /* STKAudioPlayer.m */,
+				B60E53A61ABFE14A0019505B /* STKAutoRecoveringHTTPDataSource.h */,
+				B60E53A71ABFE14A0019505B /* STKAutoRecoveringHTTPDataSource.m */,
+				B60E53A81ABFE14A0019505B /* STKCoreFoundationDataSource.h */,
+				B60E53A91ABFE14A0019505B /* STKCoreFoundationDataSource.m */,
+				B60E53AA1ABFE14A0019505B /* STKDataSource.h */,
+				B60E53AB1ABFE14A0019505B /* STKDataSource.m */,
+				B60E53AC1ABFE14A0019505B /* STKDataSourceWrapper.h */,
+				B60E53AD1ABFE14A0019505B /* STKDataSourceWrapper.m */,
+				B60E53AE1ABFE14A0019505B /* STKHTTPDataSource.h */,
+				B60E53AF1ABFE14A0019505B /* STKHTTPDataSource.m */,
+				B60E53B01ABFE14A0019505B /* STKLocalFileDataSource.h */,
+				B60E53B11ABFE14A0019505B /* STKLocalFileDataSource.m */,
+				B60E53B21ABFE14A0019505B /* STKQueueEntry.h */,
+				B60E53B31ABFE14A0019505B /* STKQueueEntry.m */,
+				B60E53B41ABFE14A0019505B /* StreamingKit-Prefix.pch */,
+			);
+			path = StreamingKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +286,11 @@
 				TargetAttributes = {
 					B60E52EA1ABFB0CB0019505B = {
 						CreatedOnToolsVersion = 6.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					B60E53031ABFB0CB0019505B = {
 						CreatedOnToolsVersion = 6.2;
@@ -200,6 +323,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B60E52FA1ABFB0CB0019505B /* Main.storyboard in Resources */,
+				B63F05991ADB0E4A0040168F /* broadwave (1).m3u in Resources */,
+				B60E53C51ABFFF440019505B /* stream.m3u in Resources */,
+				B63F05971ADB0E450040168F /* broadwave.m3u in Resources */,
 				B60E52FF1ABFB0CB0019505B /* LaunchScreen.xib in Resources */,
 				B60E52FC1ABFB0CB0019505B /* Images.xcassets in Resources */,
 			);
@@ -219,9 +345,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B60E53BC1ABFE14A0019505B /* STKLocalFileDataSource.m in Sources */,
+				B60E53B71ABFE14A0019505B /* STKAutoRecoveringHTTPDataSource.m in Sources */,
+				B60E53C31ABFF01E0019505B /* WaveView.m in Sources */,
+				B60E53B51ABFE14A0019505B /* NSMutableArray+STKAudioPlayer.m in Sources */,
+				B60E53B81ABFE14A0019505B /* STKCoreFoundationDataSource.m in Sources */,
+				B60E53BA1ABFE14A0019505B /* STKDataSourceWrapper.m in Sources */,
 				B60E52F71ABFB0CB0019505B /* ViewController.m in Sources */,
+				B60E53BB1ABFE14A0019505B /* STKHTTPDataSource.m in Sources */,
+				B60E53B61ABFE14A0019505B /* STKAudioPlayer.m in Sources */,
 				B60E52F41ABFB0CB0019505B /* AppDelegate.m in Sources */,
 				B60E52F11ABFB0CB0019505B /* main.m in Sources */,
+				B60E53B91ABFE14A0019505B /* STKDataSource.m in Sources */,
+				B60651FA1AC31550008300D8 /* InfoViewController.m in Sources */,
+				B60E53BD1ABFE14A0019505B /* STKQueueEntry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +481,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "WGTD Radio App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,6 +492,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "WGTD Radio App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -412,6 +551,7 @@
 				B60E53101ABFB0CC0019505B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B60E53111ABFB0CC0019505B /* Build configuration list for PBXNativeTarget "WGTD Radio AppTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +560,7 @@
 				B60E53131ABFB0CC0019505B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

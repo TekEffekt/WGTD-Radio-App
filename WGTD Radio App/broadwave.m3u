@@ -1,0 +1,5 @@
+#EXTM3U
+#EXT-X-TARGETDURATION:-1
+#EXTINF:-1,WGTD HD-3
+http://199.255.3.11:88/broadwave.mp3?src=2&rate=1&ref=http%3A%2F%2Fwww.wgtd.org%2Fhd3.asp
+#EXT-X-ENDLIST
