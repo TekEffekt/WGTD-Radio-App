@@ -1,5 +1,0 @@
-#EXTM3U
-#EXT-X-TARGETDURATION:-1
-#EXTINF:-1,WGTD GRRS
-http://199.255.3.11:88/broadwave.mp3?src=4&rate=1&ref=http%3A%2F%2Fwww.wgtd.org%2Freading.asp
-#EXT-X-ENDLIST

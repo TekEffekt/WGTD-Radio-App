@@ -34,7 +34,6 @@
 		B60E53C51ABFFF440019505B /* stream.m3u in Resources */ = {isa = PBXBuildFile; fileRef = B60E53C41ABFFF440019505B /* stream.m3u */; };
 		B63F05971ADB0E450040168F /* broadwave.m3u in Resources */ = {isa = PBXBuildFile; fileRef = B63F05961ADB0E450040168F /* broadwave.m3u */; };
 		B63F05991ADB0E4A0040168F /* broadwave (1).m3u in Resources */ = {isa = PBXBuildFile; fileRef = B63F05981ADB0E4A0040168F /* broadwave (1).m3u */; };
-		B6FE5F531AF1366800529B3E /* reading.m3u in Resources */ = {isa = PBXBuildFile; fileRef = B6FE5F521AF1366800529B3E /* reading.m3u */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +94,6 @@
 		B60E53C41ABFFF440019505B /* stream.m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream.m3u; sourceTree = "<group>"; };
 		B63F05961ADB0E450040168F /* broadwave.m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = broadwave.m3u; sourceTree = "<group>"; };
 		B63F05981ADB0E4A0040168F /* broadwave (1).m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "broadwave (1).m3u"; sourceTree = "<group>"; };
-		B6FE5F521AF1366800529B3E /* reading.m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = reading.m3u; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +150,6 @@
 				B60E53A11ABFE14A0019505B /* StreamingKit */,
 				B60E533E1ABFB26B0019505B /* Views */,
 				B60E53C41ABFFF440019505B /* stream.m3u */,
-				B6FE5F521AF1366800529B3E /* reading.m3u */,
 				B63F05981ADB0E4A0040168F /* broadwave (1).m3u */,
 				B63F05961ADB0E450040168F /* broadwave.m3u */,
 				B60E52F21ABFB0CB0019505B /* AppDelegate.h */,
@@ -327,7 +324,6 @@
 			files = (
 				B60E52FA1ABFB0CB0019505B /* Main.storyboard in Resources */,
 				B63F05991ADB0E4A0040168F /* broadwave (1).m3u in Resources */,
-				B6FE5F531AF1366800529B3E /* reading.m3u in Resources */,
 				B60E53C51ABFFF440019505B /* stream.m3u in Resources */,
 				B63F05971ADB0E450040168F /* broadwave.m3u in Resources */,
 				B60E52FF1ABFB0CB0019505B /* LaunchScreen.xib in Resources */,
