@@ -10,8 +10,11 @@
 #import "STKAudioPlayer.h"
 #import "WaveView.h"
 #import "InfoViewController.h"
+#import "FSAudioStream.h"
+#import "Reachability.h"
+#import "JFMinimalNotification.h"
 
-@interface ViewController () <STKAudioPlayerDelegate>
+@interface ViewController () <FSPCMAudioStreamDelegate>
 
 @property (strong, nonatomic) WaveView *waveView;
 @property(strong, nonatomic) UIVisualEffectView *blurEffectView;
@@ -25,9 +28,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *backwardLabel;
 @property (weak, nonatomic) IBOutlet UIView *waveContainer;
 @property (weak, nonatomic) IBOutlet UIImageView *bannerImage;
+@property (weak, nonatomic) IBOutlet UIView *stationImage;
 
 @property(nonatomic) BOOL playing;
-@property(strong, nonatomic) STKAudioPlayer *audioPlayer;
+@property(nonatomic) BOOL streamReady;
+@property(strong, nonatomic) FSAudioStream *audioPlayer;
+@property(strong, nonatomic) STKAudioPlayer *stkPlayer;
 
 @property(strong, nonatomic) NSArray *channels;
 @property(nonatomic) int channelIndex;
@@ -35,6 +41,8 @@
 @property(strong, nonatomic) NSArray *skipButtonLabelText;
 
 @property(nonatomic) int bannerNumber;
+
+@property(strong, nonatomic) JFMinimalNotification *notification;
 
 @end
 
@@ -45,9 +53,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.audioPlayer = [[STKAudioPlayer alloc] init];
-    self.audioPlayer.delegate = self;
-    self.audioPlayer.meteringEnabled = YES;
     [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(updateWaveView) userInfo:nil repeats:YES];
     [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(changeAdBanner) userInfo:nil repeats:YES];
     
@@ -68,6 +73,89 @@
     [self setSkipButtonLabels];
     
     self.bannerNumber = 1;
+    
+    self.stkPlayer = [[STKAudioPlayer alloc] init];
+    STKAudioPlayerOptions options = self.stkPlayer.options;
+    options.enableVolumeMixer = YES;
+    
+    self.stkPlayer = [[STKAudioPlayer alloc] initWithOptions:options];
+    self.stkPlayer.meteringEnabled = YES;
+    self.stkPlayer.volume = 0.0;
+    
+    self.audioPlayer = [[FSAudioStream alloc] init];
+    self.audioPlayer.url = [NSURL URLWithString:self.channels[self.channelIndex]];
+    
+    self.audioPlayer.onStateChange = ^ (FSAudioStreamState state)
+    {
+        if([Reachability connectedToInternet])
+        {
+            NSLog(@"%u", state);
+            if(state == kFsAudioStreamBuffering)
+            {
+                self.streamReady = NO;
+                
+                self.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleWarning title:@"" subTitle:@"Your stream is loading....."];
+                
+                [self.view addSubview:self.notification];
+                
+                [self.notification show];
+            } else if(state == kFsAudioStreamPlaying)
+            {
+                self.streamReady = YES;
+                
+                if(self.notification)
+                {
+                    [self.notification dismiss];
+                }
+                
+                self.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleSuccess title:@"" subTitle:@"Your stream is now playing!" dismissalDelay:1];
+                
+                [self.view addSubview:self.notification];
+                
+                [self.notification show];
+            } else if(state == kFsAudioStreamFailed)
+            {
+                self.streamReady = NO;
+                
+                if(self.notification)
+                {
+                    [self.notification dismiss];
+                }
+                
+                self.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleError title:@"" subTitle:@"There was an error!" dismissalDelay:1];
+                
+                [self.view addSubview:self.notification];
+                
+                [self.notification show];
+            }
+        } else
+        {
+            [self.audioPlayer stop];
+            [self.stkPlayer stop];
+            UIImage *image = [UIImage imageNamed:@"play"];
+            image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+            [self.playButton setImage:image forState:UIControlStateNormal];
+            
+            self.playing = NO;
+            self.streamReady = NO;
+            
+            if(self.notification.currentStyle != JFMinimalNotificationStyleError)
+            {
+                if(self.notification)
+                {
+                    [self.notification dismiss];
+                }
+                
+                self.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleError title:@"" subTitle:@"There was an error!" dismissalDelay:1];
+                
+                [self.view addSubview:self.notification];
+                
+                [self.notification show];
+            }
+        }
+    };
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(snapshotStats) userInfo:nil repeats:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -103,7 +191,7 @@
         self.waveView.backgroundColor = [UIColor clearColor];
         self.waveView.waveColor = self.view.tintColor;
         self.waveView.idleAmplitude = 0.02;
-        [self.view insertSubview:self.waveView belowSubview:self.playButton];
+        [self.view insertSubview:self.waveView aboveSubview:self.stationImage];
     }
 }
 
@@ -115,22 +203,42 @@
 
 - (IBAction)playPressed:(UIButton *)sender
 {
-    if(!self.playing)
+    
+    if([Reachability connectedToInternet])
     {
-        [self.audioPlayer play:self.channels[self.channelIndex]];
-        UIImage *image = [UIImage imageNamed:@"pause"];
-        image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        [self.playButton setImage:image forState:UIControlStateNormal];
-        
-        self.playing = YES;
+        if(!self.playing)
+        {
+            [self.audioPlayer play];
+            [self.stkPlayer play: self.channels[self.channelIndex]];
+            UIImage *image = [UIImage imageNamed:@"pause"];
+            image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+            [self.playButton setImage:image forState:UIControlStateNormal];
+            
+            self.playing = YES;
+        } else
+        {
+            [self.audioPlayer stop];
+            [self.stkPlayer stop];
+            UIImage *image = [UIImage imageNamed:@"play"];
+            image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+            [self.playButton setImage:image forState:UIControlStateNormal];
+            
+            self.playing = NO;
+            self.streamReady = NO;
+            
+            if(self.notification)
+            {
+                [self.notification dismiss];
+            }
+        }
     } else
     {
-        [self.audioPlayer stop];
-        UIImage *image = [UIImage imageNamed:@"play"];
-        image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        [self.playButton setImage:image forState:UIControlStateNormal];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Uh Oh!" message:@"You have no internet connection!" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
         
-        self.playing = NO;
+        [alert addAction:action];
+        
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
@@ -154,14 +262,28 @@
         }
     }
     
+    [[NSUserDefaults standardUserDefaults] setInteger:self.channelIndex forKey:@"Channel Index"];
+    self.channelLabel.text = self.channelLabelTexts[self.channelIndex];
+    
+    self.audioPlayer.url = [NSURL URLWithString:self.channels[self.channelIndex]];
+    
     if(self.playing)
     {
         [self.audioPlayer stop];
-        [self.audioPlayer play:self.channels[self.channelIndex]];
+        [self.stkPlayer stop];
+        
+        UIImage *image = [UIImage imageNamed:@"play"];
+        image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [self.playButton setImage:image forState:UIControlStateNormal];
+        
+        self.playing = NO;
+        self.streamReady = NO;
     }
     
-    [[NSUserDefaults standardUserDefaults] setInteger:self.channelIndex forKey:@"Channel Index"];
-    self.channelLabel.text = self.channelLabelTexts[self.channelIndex];
+    if(self.notification)
+    {
+        [self.notification dismiss];
+    }
     
     [self setSkipButtonLabels];
 }
@@ -201,36 +323,35 @@
 # pragma mark - Wave View
 - (void)updateWaveView
 {
-    CGFloat level = (([self.audioPlayer averagePowerInDecibelsForChannel:1] + 60) / 60);
-    NSLog(@"%f", level);
+    CGFloat level = (([self.stkPlayer averagePowerInDecibelsForChannel:1] + 60) / 60);
+
+    if(self.streamReady)
+    {
+        if(self.stkPlayer.state == STKAudioPlayerStateError)
+        {
+            NSLog(@"STK broken");
+            [self.waveView updateWithLevel: 0.5];
+            [self.stkPlayer stop];
+            [self.stkPlayer play:self.channels[self.channelIndex]];
+        } else
+        {
+            NSLog(@"STK not broken");
+            [self.waveView updateWithLevel: level];
+        }
+    } else
+    {
+        [self.waveView updateWithLevel: 0.01];
+    }
+}
+
+# pragma mark - Stream Stats
+- (void)snapshotStats
+{
+    FSStreamStatistics *stat = self.audioPlayer.statistics;
     
-    [self.waveView updateWithLevel:level];
-}
-
-#pragma mark - Audio Player Delegate
--(void) audioPlayer:(STKAudioPlayer*)audioPlayer stateChanged:(STKAudioPlayerState)state previousState:(STKAudioPlayerState)previousState
-{
     
+    NSString *statDescription = [stat description];
 }
 
--(void) audioPlayer:(STKAudioPlayer*)audioPlayer unexpectedError:(STKAudioPlayerErrorCode)errorCode
-{
-}
-
--(void) audioPlayer:(STKAudioPlayer*)audioPlayer didStartPlayingQueueItemId:(NSObject*)queueItemId
-{
-}
-
--(void) audioPlayer:(STKAudioPlayer*)audioPlayer didFinishBufferingSourceWithQueueItemId:(NSObject*)queueItemId
-{
-}
-
--(void) audioPlayer:(STKAudioPlayer*)audioPlayer didFinishPlayingQueueItemId:(NSObject*)queueItemId withReason:(STKAudioPlayerStopReason)stopReason andProgress:(double)progress andDuration:(double)duration
-{
-}
-
--(void) audioPlayer:(STKAudioPlayer *)audioPlayer logInfo:(NSString *)line
-{
-}
 
 @end
