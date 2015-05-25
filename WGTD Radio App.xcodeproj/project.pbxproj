@@ -33,6 +33,8 @@
 		B60E36B01B1281F4004C142C /* NSInvocation+Constructors.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E36A91B1281F4004C142C /* NSInvocation+Constructors.m */; };
 		B60E36B11B1281F4004C142C /* UIColor+JFMinimalNotificationColors.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E36AB1B1281F4004C142C /* UIColor+JFMinimalNotificationColors.m */; };
 		B60E36B21B1281F4004C142C /* UIView+Round.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E36AD1B1281F4004C142C /* UIView+Round.m */; };
+		B60E36B41B13CA84004C142C /* broadwave (2).m3u in Resources */ = {isa = PBXBuildFile; fileRef = B60E36B31B13CA84004C142C /* broadwave (2).m3u */; };
+		B60E36B61B13CAFE004C142C /* Sportsweb.m3u in Resources */ = {isa = PBXBuildFile; fileRef = B60E36B51B13CAFE004C142C /* Sportsweb.m3u */; };
 		B60E52F11ABFB0CB0019505B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E52F01ABFB0CB0019505B /* main.m */; };
 		B60E52F41ABFB0CB0019505B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E52F31ABFB0CB0019505B /* AppDelegate.m */; };
 		B60E52F71ABFB0CB0019505B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E52F61ABFB0CB0019505B /* ViewController.m */; };
@@ -123,6 +125,8 @@
 		B60E36AB1B1281F4004C142C /* UIColor+JFMinimalNotificationColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JFMinimalNotificationColors.m"; sourceTree = "<group>"; };
 		B60E36AC1B1281F4004C142C /* UIView+Round.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Round.h"; sourceTree = "<group>"; };
 		B60E36AD1B1281F4004C142C /* UIView+Round.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Round.m"; sourceTree = "<group>"; };
+		B60E36B31B13CA84004C142C /* broadwave (2).m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "broadwave (2).m3u"; sourceTree = "<group>"; };
+		B60E36B51B13CAFE004C142C /* Sportsweb.m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sportsweb.m3u; sourceTree = "<group>"; };
 		B60E52EB1ABFB0CB0019505B /* WGTD Radio App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WGTD Radio App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60E52EF1ABFB0CB0019505B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B60E52F01ABFB0CB0019505B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -294,7 +298,9 @@
 				B60E533E1ABFB26B0019505B /* Views */,
 				B60E36A01B0FFFE5004C142C /* Reachability.h */,
 				B60E36A11B0FFFE5004C142C /* Reachability.m */,
+				B60E36B51B13CAFE004C142C /* Sportsweb.m3u */,
 				B63F05981ADB0E4A0040168F /* broadwave (1).m3u */,
+				B60E36B31B13CA84004C142C /* broadwave (2).m3u */,
 				B60E53C41ABFFF440019505B /* stream.m3u */,
 				B63F05961ADB0E450040168F /* broadwave.m3u */,
 				B60E52F21ABFB0CB0019505B /* AppDelegate.h */,
@@ -469,8 +475,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B60E52FA1ABFB0CB0019505B /* Main.storyboard in Resources */,
+				B60E36B61B13CAFE004C142C /* Sportsweb.m3u in Resources */,
 				B63F05991ADB0E4A0040168F /* broadwave (1).m3u in Resources */,
 				B60E53C51ABFFF440019505B /* stream.m3u in Resources */,
+				B60E36B41B13CA84004C142C /* broadwave (2).m3u in Resources */,
 				B63F05971ADB0E450040168F /* broadwave.m3u in Resources */,
 				B60E52FF1ABFB0CB0019505B /* LaunchScreen.xib in Resources */,
 				B60E52FC1ABFB0CB0019505B /* Images.xcassets in Resources */,

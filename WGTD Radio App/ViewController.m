@@ -28,7 +28,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *backwardLabel;
 @property (weak, nonatomic) IBOutlet UIView *waveContainer;
 @property (weak, nonatomic) IBOutlet UIImageView *bannerImage;
-@property (weak, nonatomic) IBOutlet UIView *stationImage;
+@property (weak, nonatomic) IBOutlet UIImageView *stationImage;
 
 @property(nonatomic) BOOL playing;
 @property(nonatomic) BOOL streamReady;
@@ -39,6 +39,7 @@
 @property(nonatomic) int channelIndex;
 @property(strong, nonatomic) NSArray *channelLabelTexts;
 @property(strong, nonatomic) NSArray *skipButtonLabelText;
+@property(strong, nonatomic) NSArray *stationImageNames;
 
 @property(nonatomic) int bannerNumber;
 
@@ -57,9 +58,11 @@
     [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(changeAdBanner) userInfo:nil repeats:YES];
     
     self.channels = @[@"http://media.gtc.edu:8000/stream", @"http://199.255.3.11:88/broadwave.mp3?src=1&rate=1&ref=http%3A%2F%2Fwww.wgtd.org%2Fhd2.asp",
-                      @"http://199.255.3.11:88/broadwave.mp3?src=2&rate=1&ref=http%3A%2F%2Fwww.wgtd.org%2Fhd3.asp"];
-    self.channelLabelTexts = @[@"Classical Radio", @"Jazz Radio", @"Community Radio"];
-    self.skipButtonLabelText = @[@"Classical", @"Jazz", @"Community"];
+                      @"http://199.255.3.11:88/broadwave.mp3?src=4&rate=1&ref=http%3A%2F%2Fwww.wgtd.org%2Freading.asp",
+                      @"http://sportsweb.gtc.edu:8000/Sportsweb"];
+    self.channelLabelTexts = @[@"Classical Radio", @"Jazz Radio", @"Reading Service", @"Sportsweb Radio"];
+    self.skipButtonLabelText = @[@"Classical", @"Jazz", @"Reading", @"Sportsweb"];
+    self.stationImageNames = @[@"Classical", @"Jazz", @"Reading", @"Sports"];
     
     if(![[NSUserDefaults standardUserDefaults] integerForKey:@"Channel Index"])
     {
@@ -179,7 +182,7 @@
     [self.playButton setImage:image forState:UIControlStateNormal];
     self.playButton.tintColor = self.view.tintColor;
     
-    self.channelLabel.text = self.channelLabelTexts[self.channelIndex];
+    self.stationImage.image = [UIImage imageNamed:self.stationImageNames[self.channelIndex]];
 }
 
 - (void)viewDidLayoutSubviews
@@ -208,6 +211,7 @@
     {
         if(!self.playing)
         {
+            NSLog(@"%@", self.channels[self.channelIndex]);
             [self.audioPlayer play];
             [self.stkPlayer play: self.channels[self.channelIndex]];
             UIImage *image = [UIImage imageNamed:@"pause"];
@@ -248,7 +252,7 @@
     {
         self.channelIndex += 1;
         
-        if(self.channelIndex > 2)
+        if(self.channelIndex > 3)
         {
             self.channelIndex = 0;
         }
@@ -258,13 +262,13 @@
         
         if(self.channelIndex < 0)
         {
-            self.channelIndex = 2;
+            self.channelIndex = 3;
         }
     }
     
     [[NSUserDefaults standardUserDefaults] setInteger:self.channelIndex forKey:@"Channel Index"];
-    self.channelLabel.text = self.channelLabelTexts[self.channelIndex];
-    
+    self.stationImage.image = [UIImage imageNamed:self.stationImageNames[self.channelIndex]];
+
     self.audioPlayer.url = [NSURL URLWithString:self.channels[self.channelIndex]];
     
     if(self.playing)
@@ -296,12 +300,12 @@
     forwardLabelIndex = self.channelIndex + 1;
     backwardLabelIndex = self.channelIndex - 1;
     
-    if(forwardLabelIndex > 2)
+    if(forwardLabelIndex > 3)
     {
         forwardLabelIndex = 0;
     } else if(backwardLabelIndex < 0)
     {
-        backwardLabelIndex = 2;
+        backwardLabelIndex = 3;
     }
     
     self.forwardLabel.text = self.skipButtonLabelText[forwardLabelIndex];
@@ -329,13 +333,13 @@
     {
         if(self.stkPlayer.state == STKAudioPlayerStateError)
         {
-            NSLog(@"STK broken");
+//            NSLog(@"STK broken");
             [self.waveView updateWithLevel: 0.5];
             [self.stkPlayer stop];
             [self.stkPlayer play:self.channels[self.channelIndex]];
         } else
         {
-            NSLog(@"STK not broken");
+//            NSLog(@"STK not broken");
             [self.waveView updateWithLevel: level];
         }
     } else
