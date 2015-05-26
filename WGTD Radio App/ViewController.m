@@ -219,6 +219,14 @@
 
 - (IBAction)playPressed:(UIButton *)sender
 {
+    if(self.channelIndex == 2)
+    {
+        if(![self checkScheduleForReading])
+        {
+            return;
+        }
+    }
+    
     if(!self.playing)
     {
         NSLog(@"%@", self.channels[self.channelIndex]);
@@ -229,6 +237,12 @@
         [self.playButton setImage:image forState:UIControlStateNormal];
         
         self.playing = YES;
+        
+        if(self.channelIndex == 2)
+        {
+            [self checkScheduleForReading];
+        }
+        
     } else
     {
         [self.audioPlayer stop];
@@ -349,13 +363,39 @@
     }
 }
 
-# pragma mark - Stream Stats
+# pragma mark - Other
 - (void)snapshotStats
 {
     FSStreamStatistics *stat = self.audioPlayer.statistics;
-    
-    
     NSString *statDescription = [stat description];
+}
+
+- (BOOL)checkScheduleForReading
+{
+    NSDate *now = [[NSDate alloc] init];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"cccc"];
+    NSString *weekday = [[dateFormatter stringFromDate:now] lowercaseString];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"HH:mm:ss"];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *currComp = [calendar components:(NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit) fromDate:now];
+    
+    NSInteger currentHour = [currComp hour];
+
+    if([weekday isEqualToString:@"saturday"] || [weekday isEqualToString:@"sunday"] || currentHour < 10 || currentHour > 16)
+    {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Station Not Available" message:@"This station is only available from 10AM to 4PM on weekdays." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:action];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        return NO;
+    }
+    
+    return YES;
 }
 
 
