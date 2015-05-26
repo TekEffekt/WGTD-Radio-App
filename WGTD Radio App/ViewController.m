@@ -200,16 +200,14 @@
         self.waveView.waveColor = self.view.tintColor;
         self.waveView.idleAmplitude = 0.02;
         [self.view insertSubview:self.waveView aboveSubview:self.stationImage];
-    }
-    
-    NSLog(@"%f", self.view.frame.size.height);
-    
-    if(self.view.frame.size.height >= 736)
-    {
-        self.stationImage.frame = CGRectMake(0, 80, self.stationImage.frame.size.width, 200);
-    } else if(self.view.frame.size.height >= 667)
-    {
-        self.stationImage.frame = CGRectMake(0, 80, self.stationImage.frame.size.width, 180);
+        
+        if(self.view.frame.size.height >= 736)
+        {
+            self.stationImage.frame = CGRectMake(0, 80, self.stationImage.frame.size.width, 200);
+        } else if(self.view.frame.size.height >= 667)
+        {
+            self.stationImage.frame = CGRectMake(0, 80, self.stationImage.frame.size.width, 180);
+        }
     }
 }
 
@@ -221,43 +219,31 @@
 
 - (IBAction)playPressed:(UIButton *)sender
 {
-    
-    if([Reachability connectedToInternet])
+    if(!self.playing)
     {
-        if(!self.playing)
-        {
-            NSLog(@"%@", self.channels[self.channelIndex]);
-            [self.audioPlayer play];
-            [self.stkPlayer play: self.channels[self.channelIndex]];
-            UIImage *image = [UIImage imageNamed:@"pause"];
-            image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-            [self.playButton setImage:image forState:UIControlStateNormal];
-            
-            self.playing = YES;
-        } else
-        {
-            [self.audioPlayer stop];
-            [self.stkPlayer stop];
-            UIImage *image = [UIImage imageNamed:@"play"];
-            image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-            [self.playButton setImage:image forState:UIControlStateNormal];
-            
-            self.playing = NO;
-            self.streamReady = NO;
-            
-            if(self.notification)
-            {
-                [self.notification dismiss];
-            }
-        }
+        NSLog(@"%@", self.channels[self.channelIndex]);
+        [self.audioPlayer play];
+        [self.stkPlayer play: self.channels[self.channelIndex]];
+        UIImage *image = [UIImage imageNamed:@"pause"];
+        image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [self.playButton setImage:image forState:UIControlStateNormal];
+        
+        self.playing = YES;
     } else
     {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Uh Oh!" message:@"You have no internet connection!" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *action = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+        [self.audioPlayer stop];
+        [self.stkPlayer stop];
+        UIImage *image = [UIImage imageNamed:@"play"];
+        image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [self.playButton setImage:image forState:UIControlStateNormal];
         
-        [alert addAction:action];
+        self.playing = NO;
+        self.streamReady = NO;
         
-        [self presentViewController:alert animated:YES completion:nil];
+        if(self.notification)
+        {
+            [self.notification dismiss];
+        }
     }
 }
 
