@@ -14,6 +14,9 @@
 #import "Reachability.h"
 #import "JFMinimalNotification.h"
 
+#define BlockWeakObject(o) __typeof(o) __weak
+#define BlockWeakSelf BlockWeakObject(self)
+
 @interface ViewController () <FSPCMAudioStreamDelegate>
 
 @property (strong, nonatomic) WaveView *waveView;
@@ -88,6 +91,8 @@
     self.audioPlayer = [[FSAudioStream alloc] init];
     self.audioPlayer.url = [NSURL URLWithString:self.channels[self.channelIndex]];
     
+    BlockWeakSelf weakSelf = self;
+    
     self.audioPlayer.onStateChange = ^ (FSAudioStreamState state)
     {
         if([Reachability connectedToInternet])
@@ -95,65 +100,65 @@
             NSLog(@"%u", state);
             if(state == kFsAudioStreamBuffering)
             {
-                self.streamReady = NO;
+                weakSelf.streamReady = NO;
                 
-                self.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleWarning title:@"" subTitle:@"Your stream is loading....."];
+                weakSelf.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleWarning title:@"" subTitle:@"Your stream is loading....."];
                 
-                [self.view addSubview:self.notification];
+                [weakSelf.view addSubview: weakSelf.notification];
                 
-                [self.notification show];
+                [weakSelf.notification show];
             } else if(state == kFsAudioStreamPlaying)
             {
-                self.streamReady = YES;
+                weakSelf.streamReady = YES;
                 
-                if(self.notification)
+                if(weakSelf.notification)
                 {
-                    [self.notification dismiss];
+                    [weakSelf.notification dismiss];
                 }
                 
-                self.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleSuccess title:@"" subTitle:@"Your stream is now playing!" dismissalDelay:1];
+                weakSelf.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleSuccess title:@"" subTitle:@"Your stream is now playing!" dismissalDelay:1];
                 
-                [self.view addSubview:self.notification];
+                [weakSelf.view addSubview: weakSelf.notification];
                 
-                [self.notification show];
+                [weakSelf.notification show];
             } else if(state == kFsAudioStreamFailed)
             {
-                self.streamReady = NO;
+                weakSelf.streamReady = NO;
                 
-                if(self.notification)
+                if(weakSelf.notification)
                 {
-                    [self.notification dismiss];
+                    [weakSelf.notification dismiss];
                 }
                 
-                self.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleError title:@"" subTitle:@"There was an error!" dismissalDelay:1];
+                weakSelf.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleError title:@"" subTitle:@"There was an error!" dismissalDelay:1];
                 
-                [self.view addSubview:self.notification];
+                [weakSelf.view addSubview: weakSelf.notification];
                 
-                [self.notification show];
+                [weakSelf.notification show];
             }
         } else
         {
-            [self.audioPlayer stop];
-            [self.stkPlayer stop];
+            [weakSelf.audioPlayer stop];
+            [weakSelf.stkPlayer stop];
             UIImage *image = [UIImage imageNamed:@"play"];
             image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-            [self.playButton setImage:image forState:UIControlStateNormal];
+            [weakSelf.playButton setImage:image forState:UIControlStateNormal];
             
-            self.playing = NO;
-            self.streamReady = NO;
+            weakSelf.playing = NO;
+            weakSelf.streamReady = NO;
             
-            if(self.notification.currentStyle != JFMinimalNotificationStyleError)
+            if(weakSelf.notification.currentStyle != JFMinimalNotificationStyleError)
             {
-                if(self.notification)
+                if(weakSelf.notification)
                 {
-                    [self.notification dismiss];
+                    [weakSelf.notification dismiss];
                 }
                 
-                self.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleError title:@"" subTitle:@"There was an error!" dismissalDelay:1];
+                weakSelf.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleError title:@"" subTitle:@"There was an error!" dismissalDelay:1];
                 
-                [self.view addSubview:self.notification];
+                [weakSelf.view addSubview: weakSelf.notification];
                 
-                [self.notification show];
+                [weakSelf.notification show];
             }
         }
     };
@@ -195,6 +200,16 @@
         self.waveView.waveColor = self.view.tintColor;
         self.waveView.idleAmplitude = 0.02;
         [self.view insertSubview:self.waveView aboveSubview:self.stationImage];
+    }
+    
+    NSLog(@"%f", self.view.frame.size.height);
+    
+    if(self.view.frame.size.height >= 736)
+    {
+        self.stationImage.frame = CGRectMake(0, 80, self.stationImage.frame.size.width, 200);
+    } else if(self.view.frame.size.height >= 667)
+    {
+        self.stationImage.frame = CGRectMake(0, 80, self.stationImage.frame.size.width, 180);
     }
 }
 
