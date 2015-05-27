@@ -1,10 +1,27 @@
-//
-//  JFMinimalNotification.m
-//  JFMinimalNotification
-//
-//  Created by Jeremy Fox on 5/4/13.
-//  Copyright (c) 2013 Jeremy Fox. All rights reserved.
-//
+/*
+ * JFMinimalNotification
+ *
+ * Created by Jeremy Fox on 5/4/13.
+ * Copyright (c) 2013 Jeremy Fox. All rights reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
 
 #import "JFMinimalNotification.h"
 #import "JFMinimalNotificationArt.h"
@@ -65,7 +82,9 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
     _notificationVerticalConstraints    = nil;
     _notificationHorizontalConstraints  = nil;
     _titleLabelHorizontalConsraints     = nil;
+    _titleLabelVerticalConsraints       = nil;
     _subTitleLabelHorizontalConsraints  = nil;
+    _subTitleLabelVerticalConsraints    = nil;
     _dismissalTimer                     = nil;
 }
 
@@ -111,6 +130,7 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
         
         _contentView = [UIView new];
         _contentView.translatesAutoresizingMaskIntoConstraints = NO;
+        _contentView.accessibilityLabel = @"Noticiation Content View";
         UIView* contentView = _contentView;
         NSDictionary* views = NSDictionaryOfVariableBindings(contentView);
         [self addSubview:_contentView];
@@ -131,7 +151,7 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
 - (void)didMoveToSuperview
 {
     if (self.isReadyToDisplay) {
-        [self configureInitialNotificationConstraints];
+        [self configureInitialNotificationConstraintsForTopPresentation:self.presentFromTop layoutIfNeeded:YES];
     }
 }
 
@@ -147,8 +167,8 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
 - (void)show
 {
     if (self.isReadyToDisplay) {
-        if (self.delegate && [self.delegate respondsToSelector:@selector(willShowNotification:)]) {
-            [self.delegate willShowNotification:self];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(minimalNotificationWillShowNotification:)]) {
+            [self.delegate minimalNotificationWillShowNotification:self];
         }
         
         [self.superview removeConstraints:self.notificationVerticalConstraints];
@@ -156,7 +176,15 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
         UIView* notification = self;
         NSDictionary* views = NSDictionaryOfVariableBindings(superview, notification);
         NSDictionary* metrics = @{@"height": @(kNotificationViewHeight)};
-        self.notificationVerticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[notification(==height)]-|" options:0 metrics:metrics views:views];
+        
+        NSString* verticalConstraintString;
+        if (self.presentFromTop) {
+            verticalConstraintString = @"V:|[notification(==height)]";
+        } else {
+            verticalConstraintString = @"V:[notification(==height)]|";
+        }
+        
+        self.notificationVerticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:verticalConstraintString options:0 metrics:metrics views:views];
         [self.superview addConstraints:self.notificationVerticalConstraints];
         
         [UIView animateWithDuration:0.6f delay:0.0f usingSpringWithDamping:0.7f initialSpringVelocity:0.3f options:UIViewAnimationOptionAllowAnimatedContent animations:^{
@@ -168,8 +196,8 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
                 self.dismissalTimer = [NSTimer scheduledTimerWithTimeInterval:self.dismissalDelay invocation:dismissalInvocation repeats:NO];
             }
             
-            if (self.delegate && [self.delegate respondsToSelector:@selector(didShowNotification:)]) {
-                [self.delegate didShowNotification:self];
+            if (self.delegate && [self.delegate respondsToSelector:@selector(minimalNotificationDidShowNotification:)]) {
+                [self.delegate minimalNotificationDidShowNotification:self];
             }
         }];
     } else {
@@ -179,8 +207,8 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
 
 - (void)dismiss
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(willDisimissNotification:)]) {
-        [self.delegate willDisimissNotification:self];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(minimalNotificationWillDisimissNotification:)]) {
+        [self.delegate minimalNotificationWillDisimissNotification:self];
     }
     
     if (self.dismissalTimer) {
@@ -188,36 +216,63 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
         self.dismissalTimer = nil;
     }
     
-    [self configureInitialNotificationConstraints];
+    [self configureInitialNotificationConstraintsForTopPresentation:self.presentFromTop layoutIfNeeded:NO];
     
     [UIView animateWithDuration:0.6f delay:0.0f usingSpringWithDamping:0.7f initialSpringVelocity:0.3f options:UIViewAnimationOptionAllowAnimatedContent animations:^{
         [self layoutIfNeeded];
     } completion:^(BOOL finished) {
-        if (self.delegate && [self.delegate respondsToSelector:@selector(didDismissNotification:)]) {
-            [self.delegate didDismissNotification:self];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(minimalNotificationDidDismissNotification:)]) {
+            [self.delegate minimalNotificationDidDismissNotification:self];
         }
     }];
 }
 
-- (void)configureInitialNotificationConstraints
+- (void)configureInitialNotificationConstraintsForTopPresentation:(BOOL)topPresentation layoutIfNeeded:(BOOL)layoutIfNeeded
 {
-    [self.superview removeConstraints:self.notificationVerticalConstraints];
-    [self.superview removeConstraints:self.notificationHorizontalConstraints];
+    if (self.notificationVerticalConstraints.count > 0) {
+        [self.superview removeConstraints:self.notificationVerticalConstraints];
+    }
+    if (self.notificationHorizontalConstraints.count > 0) {
+        [self.superview removeConstraints:self.notificationHorizontalConstraints];
+    }
     UIView* superview = self.superview;
+    
+    if (!superview) {
+        // This is to address issue: https://github.com/atljeremy/JFMinimalNotifications/issues/10
+        return;
+    }
+    
     UIView* notification = self;
     NSDictionary* views = NSDictionaryOfVariableBindings(superview, notification);
     NSDictionary* metrics = @{@"height": @(kNotificationViewHeight)};
     
-    self.notificationVerticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[superview][notification(==height)]" options:0 metrics:metrics views:views];
+    NSString* verticalConstraintString;
+    if (topPresentation) {
+        verticalConstraintString = @"V:[notification(==height)][superview]";
+    } else {
+        verticalConstraintString = @"V:[superview][notification(==height)]";
+    }
+    
+    self.notificationVerticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:verticalConstraintString options:0 metrics:metrics views:views];
     [self.superview addConstraints:self.notificationVerticalConstraints];
     
     self.notificationHorizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[notification]|" options:0 metrics:metrics views:views];
     [self.superview addConstraints:self.notificationHorizontalConstraints];
+    
+    if (layoutIfNeeded) {
+        [self layoutIfNeeded];
+    }
 }
 
 #pragma mark ----------------------
 #pragma mark Setters / Configuration
 #pragma mark ----------------------
+
+- (void)setPresentFromTop:(BOOL)presentFromTop
+{
+    _presentFromTop = presentFromTop;
+    [self configureInitialNotificationConstraintsForTopPresentation:_presentFromTop layoutIfNeeded:YES];
+}
 
 - (void)setStyle:(JFMinimalNotificationStytle)style animated:(BOOL)animated
 {
@@ -284,7 +339,7 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
             break;
         }
     }
-
+    
     UIImageView* imageView = [[UIImageView alloc] initWithImage:image];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -303,6 +358,7 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
     if (title && title.length > 0) {
         if (!self.titleLabel) {
             self.titleLabel = [UILabel new];
+            self.titleLabel.accessibilityLabel = @"Notification Title";
             self.titleLabel.adjustsFontSizeToFitWidth = YES;
             self.titleLabel.backgroundColor = [UIColor clearColor];
             self.titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
@@ -323,10 +379,10 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
         self.titleLabel = nil;
     }
     
-    
     if (subTitle && subTitle.length > 0) {
         if (!self.subTitleLabel) {
             self.subTitleLabel = [UILabel new];
+            self.subTitleLabel.accessibilityLabel = @"Notification Subtitle";
             self.subTitleLabel.text = subTitle;
             self.subTitleLabel.adjustsFontSizeToFitWidth = YES;
             self.subTitleLabel.backgroundColor = [UIColor clearColor];
@@ -336,8 +392,12 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
             UIView* subTitleLabel = self.subTitleLabel;
             NSDictionary* views;
             NSDictionary* metrics = @{@"height": @(kNotificationTitleLabelHeight), @"padding": @(kNotificationPadding)};
-            [self.contentView removeConstraints:self.titleLabelVerticalConsraints];
-            [self.contentView removeConstraints:self.subTitleLabelVerticalConsraints];
+            if (self.titleLabelVerticalConsraints.count > 0) {
+                [self.contentView removeConstraints:self.titleLabelVerticalConsraints];
+            }
+            if (self.subTitleLabelVerticalConsraints.count > 0) {
+                [self.contentView removeConstraints:self.subTitleLabelVerticalConsraints];
+            }
             if (titleLabel) {
                 views = NSDictionaryOfVariableBindings(titleLabel, subTitleLabel);
                 self.subTitleLabelVerticalConsraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-padding-[titleLabel(>=height)][subTitleLabel(>=height)]-padding-|" options:0 metrics:metrics views:views];
@@ -388,6 +448,7 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
             if (![view isEqual:self.leftAccessoryView]) {
                 [self.leftAccessoryView removeFromSuperview];
                 _leftAccessoryView = view;
+                _leftAccessoryView.accessibilityLabel = @"Left Accessory";
                 _leftAccessoryView.translatesAutoresizingMaskIntoConstraints = NO;
                 self.leftAccessoryView.contentMode = UIViewContentModeScaleAspectFit;
                 self.leftAccessoryView.alpha = 0.0f;
@@ -500,6 +561,7 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
             if (![view isEqual:self.rightAccessoryView]) {
                 [self.rightAccessoryView removeFromSuperview];
                 _rightAccessoryView = view;
+                _rightAccessoryView.accessibilityLabel = @"Right Accessory";
                 _rightAccessoryView.translatesAutoresizingMaskIntoConstraints = NO;
                 [self.contentView addSubview:self.rightAccessoryView];
                 UIView* rightView = self.rightAccessoryView;

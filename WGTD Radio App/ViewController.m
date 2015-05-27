@@ -56,7 +56,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        
     [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(updateWaveView) userInfo:nil repeats:YES];
     [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(changeAdBanner) userInfo:nil repeats:YES];
     
@@ -103,6 +105,7 @@
                 weakSelf.streamReady = NO;
                 
                 weakSelf.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleWarning title:@"" subTitle:@"Your stream is loading....."];
+                weakSelf.notification.presentFromTop = YES;
                 
                 [weakSelf.view addSubview: weakSelf.notification];
                 
@@ -117,6 +120,8 @@
                 }
                 
                 weakSelf.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleSuccess title:@"" subTitle:@"Your stream is now playing!" dismissalDelay:1];
+                weakSelf.notification.presentFromTop = YES;
+                [weakSelf.view sendSubviewToBack:weakSelf.notification];
                 
                 [weakSelf.view addSubview: weakSelf.notification];
                 
@@ -131,6 +136,7 @@
                 }
                 
                 weakSelf.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleError title:@"" subTitle:@"There was an error!" dismissalDelay:1];
+                weakSelf.notification.presentFromTop = YES;
                 
                 [weakSelf.view addSubview: weakSelf.notification];
                 
@@ -155,6 +161,7 @@
                 }
                 
                 weakSelf.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleError title:@"" subTitle:@"There was an error!" dismissalDelay:1];
+                weakSelf.notification.presentFromTop = YES;
                 
                 [weakSelf.view addSubview: weakSelf.notification];
                 
