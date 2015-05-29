@@ -97,12 +97,15 @@
     
     self.audioPlayer.onStateChange = ^ (FSAudioStreamState state)
     {
-        if([Reachability connectedToInternet])
-        {
             NSLog(@"%u", state);
             if(state == kFsAudioStreamBuffering)
             {
                 weakSelf.streamReady = NO;
+                
+                if(weakSelf.notification)
+                {
+                    [weakSelf.notification dismiss];
+                }
                 
                 weakSelf.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleWarning title:@"" subTitle:@"Your stream is loading....."];
                 weakSelf.notification.presentFromTop = YES;
@@ -110,6 +113,7 @@
                 [weakSelf.view addSubview: weakSelf.notification];
                 
                 [weakSelf.notification show];
+                
             } else if(state == kFsAudioStreamPlaying)
             {
                 weakSelf.streamReady = YES;
@@ -126,51 +130,24 @@
                 [weakSelf.view addSubview: weakSelf.notification];
                 
                 [weakSelf.notification show];
+
             } else if(state == kFsAudioStreamFailed)
             {
                 weakSelf.streamReady = NO;
                 
-                if(weakSelf.notification)
+                if(weakSelf.notification.currentStyle != JFMinimalNotificationStyleError)
                 {
                     [weakSelf.notification dismiss];
+                    weakSelf.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleError title:@"" subTitle:@"There was an error!" dismissalDelay:1];
+                    weakSelf.notification.presentFromTop = YES;
+                    
+                    [weakSelf.view addSubview: weakSelf.notification];
+                    
+                    [weakSelf.notification show];
                 }
-                
-                weakSelf.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleError title:@"" subTitle:@"There was an error!" dismissalDelay:1];
-                weakSelf.notification.presentFromTop = YES;
-                
-                [weakSelf.view addSubview: weakSelf.notification];
-                
-                [weakSelf.notification show];
             }
-        } else
-        {
-            [weakSelf.audioPlayer stop];
-            [weakSelf.stkPlayer stop];
-            UIImage *image = [UIImage imageNamed:@"play"];
-            image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-            [weakSelf.playButton setImage:image forState:UIControlStateNormal];
-            
-            weakSelf.playing = NO;
-            weakSelf.streamReady = NO;
-            
-            if(weakSelf.notification.currentStyle != JFMinimalNotificationStyleError)
-            {
-                if(weakSelf.notification)
-                {
-                    [weakSelf.notification dismiss];
-                }
-                
-                weakSelf.notification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleError title:@"" subTitle:@"There was an error!" dismissalDelay:1];
-                weakSelf.notification.presentFromTop = YES;
-                
-                [weakSelf.view addSubview: weakSelf.notification];
-                
-                [weakSelf.notification show];
-            }
-        }
     };
     
-    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(snapshotStats) userInfo:nil repeats:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -210,7 +187,7 @@
         
         if(self.view.frame.size.height >= 736)
         {
-            self.stationImage.frame = CGRectMake(0, 80, self.stationImage.frame.size.width, 200);
+            self.stationImage.frame = CGRectMake(0, 80, self.stationImage.frame.size.width, 220);
         } else if(self.view.frame.size.height >= 667)
         {
             self.stationImage.frame = CGRectMake(0, 80, self.stationImage.frame.size.width, 180);
@@ -236,6 +213,8 @@
     
     if(!self.playing)
     {
+        [self checkInternet];
+        
         NSLog(@"%@", self.channels[self.channelIndex]);
         [self.audioPlayer play];
         [self.stkPlayer play: self.channels[self.channelIndex]];
@@ -244,11 +223,6 @@
         [self.playButton setImage:image forState:UIControlStateNormal];
         
         self.playing = YES;
-        
-        if(self.channelIndex == 2)
-        {
-            [self checkScheduleForReading];
-        }
         
     } else
     {
@@ -371,11 +345,6 @@
 }
 
 # pragma mark - Other
-- (void)snapshotStats
-{
-    FSStreamStatistics *stat = self.audioPlayer.statistics;
-    NSString *statDescription = [stat description];
-}
 
 - (BOOL)checkScheduleForReading
 {
@@ -405,5 +374,20 @@
     return YES;
 }
 
+- (void)checkInternet
+{
+    dispatch_queue_t background = dispatch_queue_create("Internet Check", NULL);
+    dispatch_async(background, ^{
+        if(![Reachability connectedToInternet])
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Internet Error" message:@"You have no internet connection!" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *action = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:action];
+                [self presentViewController:alert animated:YES completion:nil];
+            });
+        }
+    });
+}
 
 @end

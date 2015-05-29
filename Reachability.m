@@ -309,13 +309,13 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 
 + (BOOL)connectedToInternet
 {
-    NSURL *url=[NSURL URLWithString:@"http://www.google.com"];
+    NSURL *url=[NSURL URLWithString:@"http://clients3.google.com/generate_204"];
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"HEAD"];
     NSHTTPURLResponse *response;
     [NSURLConnection sendSynchronousRequest:request returningResponse:&response error: NULL];
     
-    return ([response statusCode]==200)?YES:NO;
+    return ([response statusCode]==204)?YES:NO;
 }
 
 
