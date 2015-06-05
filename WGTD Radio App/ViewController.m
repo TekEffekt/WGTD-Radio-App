@@ -112,7 +112,10 @@
                 
                 [weakSelf.view addSubview: weakSelf.notification];
                 
-                [weakSelf.notification show];
+                if(weakSelf.notification.superview)
+                {
+                    [weakSelf.notification show];
+                }
                 
             } else if(state == kFsAudioStreamPlaying)
             {
@@ -129,7 +132,10 @@
                 
                 [weakSelf.view addSubview: weakSelf.notification];
                 
-                [weakSelf.notification show];
+                if(weakSelf.notification.superview)
+                {
+                    [weakSelf.notification show];
+                }
 
             } else if(state == kFsAudioStreamFailed)
             {
@@ -143,7 +149,10 @@
                     
                     [weakSelf.view addSubview: weakSelf.notification];
                     
-                    [weakSelf.notification show];
+                    if(weakSelf.notification.superview)
+                    {
+                        [weakSelf.notification show];
+                    }
                 }
             }
     };
@@ -183,15 +192,7 @@
         self.waveView.backgroundColor = [UIColor clearColor];
         self.waveView.waveColor = self.view.tintColor;
         self.waveView.idleAmplitude = 0.02;
-        [self.view insertSubview:self.waveView aboveSubview:self.stationImage];
-        
-        if(self.view.frame.size.height >= 736)
-        {
-            self.stationImage.frame = CGRectMake(0, 80, self.stationImage.frame.size.width, 220);
-        } else if(self.view.frame.size.height >= 667)
-        {
-            self.stationImage.frame = CGRectMake(0, 80, self.stationImage.frame.size.width, 180);
-        }
+        [self.view insertSubview:self.waveView belowSubview:self.playButton];
     }
 }
 
