@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		B60651FA1AC31550008300D8 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60651F91AC31550008300D8 /* InfoViewController.m */; };
+		B609C7091B27A9CD0093EB04 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B609C7081B27A9CD0093EB04 /* libGoogleAnalyticsServices.a */; };
+		B609C7181B27BF890093EB04 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B609C7171B27BF890093EB04 /* CoreData.framework */; };
+		B609C71A1B27BF900093EB04 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B609C7191B27BF900093EB04 /* SystemConfiguration.framework */; };
+		B609C71C1B27BFA00093EB04 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B609C71B1B27BFA00093EB04 /* libz.dylib */; };
+		B609C71E1B27BFAE0093EB04 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B609C71D1B27BFAE0093EB04 /* libsqlite3.dylib */; };
+		B609C71F1B27C0070093EB04 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B609C7151B27AC2A0093EB04 /* GoogleMaps.framework */; };
 		B60E36791B0FF73F004C142C /* audio_queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B60E36671B0FF73F004C142C /* audio_queue.cpp */; };
 		B60E367A1B0FF73F004C142C /* audio_stream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B60E36691B0FF73F004C142C /* audio_stream.cpp */; };
 		B60E367B1B0FF73F004C142C /* caching_stream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B60E366B1B0FF73F004C142C /* caching_stream.cpp */; };
@@ -78,6 +84,22 @@
 		B60651F31AC31268008300D8 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		B60651F81AC31550008300D8 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		B60651F91AC31550008300D8 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		B609C7081B27A9CD0093EB04 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		B609C70B1B27AA200093EB04 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		B609C70C1B27AA200093EB04 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		B609C70D1B27AA200093EB04 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
+		B609C70E1B27AA200093EB04 /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		B609C70F1B27AA200093EB04 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		B609C7101B27AA200093EB04 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		B609C7111B27AA200093EB04 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		B609C7121B27AA200093EB04 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		B609C7131B27AA200093EB04 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		B609C7141B27AA200093EB04 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		B609C7151B27AC2A0093EB04 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "WGTD Radio App/GoogleMaps.framework"; sourceTree = "<group>"; };
+		B609C7171B27BF890093EB04 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B609C7191B27BF900093EB04 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B609C71B1B27BFA00093EB04 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		B609C71D1B27BFAE0093EB04 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		B60E36671B0FF73F004C142C /* audio_queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = audio_queue.cpp; sourceTree = "<group>"; };
 		B60E36681B0FF73F004C142C /* audio_queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audio_queue.h; sourceTree = "<group>"; };
 		B60E36691B0FF73F004C142C /* audio_stream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = audio_stream.cpp; sourceTree = "<group>"; };
@@ -177,9 +199,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B609C71F1B27C0070093EB04 /* GoogleMaps.framework in Frameworks */,
+				B609C71E1B27BFAE0093EB04 /* libsqlite3.dylib in Frameworks */,
+				B609C71C1B27BFA00093EB04 /* libz.dylib in Frameworks */,
+				B609C71A1B27BF900093EB04 /* SystemConfiguration.framework in Frameworks */,
+				B609C7181B27BF890093EB04 /* CoreData.framework in Frameworks */,
 				B60E369D1B0FFABB004C142C /* MediaPlayer.framework in Frameworks */,
 				B60E369B1B0FFAAD004C142C /* libxml2.dylib in Frameworks */,
 				B60E36991B0FFA49004C142C /* CFNetwork.framework in Frameworks */,
+				B609C7091B27A9CD0093EB04 /* libGoogleAnalyticsServices.a in Frameworks */,
 				B60E535B1ABFB99A0019505B /* Foundation.framework in Frameworks */,
 				B60E53591ABFB9940019505B /* UIKit.framework in Frameworks */,
 				B60E53571ABFB98B0019505B /* CoreGraphics.framework in Frameworks */,
@@ -199,6 +227,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B609C70A1B27AA200093EB04 /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				B609C70B1B27AA200093EB04 /* GAI.h */,
+				B609C70C1B27AA200093EB04 /* GAIDictionaryBuilder.h */,
+				B609C70D1B27AA200093EB04 /* GAIEcommerceFields.h */,
+				B609C70E1B27AA200093EB04 /* GAIEcommerceProduct.h */,
+				B609C70F1B27AA200093EB04 /* GAIEcommerceProductAction.h */,
+				B609C7101B27AA200093EB04 /* GAIEcommercePromotion.h */,
+				B609C7111B27AA200093EB04 /* GAIFields.h */,
+				B609C7121B27AA200093EB04 /* GAILogger.h */,
+				B609C7131B27AA200093EB04 /* GAITrackedViewController.h */,
+				B609C7141B27AA200093EB04 /* GAITracker.h */,
+			);
+			path = GoogleAnalytics;
+			sourceTree = "<group>";
+		};
 		B60E36661B0FF73F004C142C /* astreamer */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,8 +310,14 @@
 		B60E52E21ABFB0CB0019505B = {
 			isa = PBXGroup;
 			children = (
+				B609C71D1B27BFAE0093EB04 /* libsqlite3.dylib */,
+				B609C71B1B27BFA00093EB04 /* libz.dylib */,
+				B609C7191B27BF900093EB04 /* SystemConfiguration.framework */,
+				B609C7171B27BF890093EB04 /* CoreData.framework */,
+				B609C7151B27AC2A0093EB04 /* GoogleMaps.framework */,
 				B60E369C1B0FFABB004C142C /* MediaPlayer.framework */,
 				B60E369A1B0FFAAD004C142C /* libxml2.dylib */,
+				B609C7081B27A9CD0093EB04 /* libGoogleAnalyticsServices.a */,
 				B60E36981B0FFA49004C142C /* CFNetwork.framework */,
 				B60E535A1ABFB9990019505B /* Foundation.framework */,
 				B60E53581ABFB9940019505B /* UIKit.framework */,
@@ -292,6 +343,7 @@
 		B60E52ED1ABFB0CB0019505B /* WGTD Radio App */ = {
 			isa = PBXGroup;
 			children = (
+				B609C70A1B27AA200093EB04 /* GoogleAnalytics */,
 				B60E36821B0FF748004C142C /* Common */,
 				B60E36661B0FF73F004C142C /* astreamer */,
 				B60E53A11ABFE14A0019505B /* StreamingKit */,
@@ -656,6 +708,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WGTD",
+					Radio,
+					App,
+					"$(PROJECT_DIR)/WGTD",
+					Radio,
+					App,
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -664,6 +725,10 @@
 				INFOPLIST_FILE = "WGTD Radio App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -672,6 +737,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WGTD",
+					Radio,
+					App,
+					"$(PROJECT_DIR)/WGTD",
+					Radio,
+					App,
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -680,6 +754,10 @@
 				INFOPLIST_FILE = "WGTD Radio App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

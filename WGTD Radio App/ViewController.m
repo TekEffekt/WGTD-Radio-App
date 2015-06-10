@@ -13,6 +13,10 @@
 #import "FSAudioStream.h"
 #import "Reachability.h"
 #import "JFMinimalNotification.h"
+#import "GAI.h"
+#import "GAIFields.h"
+#import "GAIDictionaryBuilder.h"
+
 
 #define BlockWeakObject(o) __typeof(o) __weak
 #define BlockWeakSelf BlockWeakObject(self)
@@ -56,6 +60,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    
+    // This screen name value will remain set on the tracker and sent with
+    // hits until it is set to a new value or to nil.
+    [tracker set:kGAIScreenName value:@"Main Screen"];
+    
+    // manual screen tracking
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
         self.edgesForExtendedLayout = UIRectEdgeNone;
         
@@ -389,6 +402,12 @@
             });
         }
     });
+}
+
+-(void)didReceiveMemoryWarning
+{
+    [self.stkPlayer stop];
+    
 }
 
 @end
