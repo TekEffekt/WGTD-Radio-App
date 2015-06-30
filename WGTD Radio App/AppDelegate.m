@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "GAIFields.h"
-#import <GoogleMaps/GoogleMaps.h>
 #import "GAI.h"
 
 @interface AppDelegate ()
