@@ -93,6 +93,8 @@
     
     [self setSkipButtonLabels];
     
+    self.navigationController.navigationBar.topItem.title = self.stationImageNames[self.channelIndex];
+    
     self.bannerNumber = 1;
     
     self.stkPlayer = [[STKAudioPlayer alloc] init];
@@ -194,6 +196,14 @@
     self.playButton.tintColor = self.view.tintColor;
     
     self.stationImage.image = [UIImage imageNamed:self.stationImageNames[self.channelIndex]];
+    
+    image = [UIImage imageNamed:@"backward"];
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [self.backwardsButton setImage:image forState:UIControlStateNormal];
+    
+    image = [UIImage imageNamed:@"forward"];
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [self.forwardsButton setImage:image forState:UIControlStateNormal];
 }
 
 - (void)viewDidLayoutSubviews
@@ -299,6 +309,7 @@
         [self.notification dismiss];
     }
     
+    self.navigationController.navigationItem.title = self.channelLabelTexts[self.channelIndex];
     [self setSkipButtonLabels];
 }
 
