@@ -192,18 +192,18 @@
     UIImage *image = [UIImage imageNamed:@"play"];
     image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     
-    [self.playButton setImage:image forState:UIControlStateNormal];
+    [self.playButton setBackgroundImage:image forState:UIControlStateNormal];
     self.playButton.tintColor = self.view.tintColor;
     
     self.stationImage.image = [UIImage imageNamed:self.stationImageNames[self.channelIndex]];
     
     image = [UIImage imageNamed:@"backward"];
     image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    [self.backwardsButton setImage:image forState:UIControlStateNormal];
+    [self.backwardsButton setBackgroundImage:image forState:UIControlStateNormal];
     
     image = [UIImage imageNamed:@"forward"];
     image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    [self.forwardsButton setImage:image forState:UIControlStateNormal];
+    [self.forwardsButton setBackgroundImage:image forState:UIControlStateNormal];
 }
 
 - (void)viewDidLayoutSubviews
@@ -244,7 +244,7 @@
         [self.stkPlayer play: self.channels[self.channelIndex]];
         UIImage *image = [UIImage imageNamed:@"pause"];
         image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        [self.playButton setImage:image forState:UIControlStateNormal];
+        [self.playButton setBackgroundImage:image forState:UIControlStateNormal];
         
         self.playing = YES;
         
@@ -254,7 +254,7 @@
         [self.stkPlayer stop];
         UIImage *image = [UIImage imageNamed:@"play"];
         image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        [self.playButton setImage:image forState:UIControlStateNormal];
+        [self.playButton setBackgroundImage:image forState:UIControlStateNormal];
         
         self.playing = NO;
         self.streamReady = NO;
@@ -298,7 +298,7 @@
         
         UIImage *image = [UIImage imageNamed:@"play"];
         image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        [self.playButton setImage:image forState:UIControlStateNormal];
+        [self.playButton setBackgroundImage:image forState:UIControlStateNormal];
         
         self.playing = NO;
         self.streamReady = NO;
