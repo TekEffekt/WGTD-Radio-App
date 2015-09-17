@@ -478,7 +478,7 @@
 				TargetAttributes = {
 					B60E52EA1ABFB0CB0019505B = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 9463AL9REH;
+						DevelopmentTeam = F8BA5TMX9M;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -732,6 +732,7 @@
 					Radio,
 					App/GoogleAnalytics,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.uwp.WGTD-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -774,6 +775,7 @@
 					Radio,
 					App/GoogleAnalytics,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.uwp.WGTD-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
