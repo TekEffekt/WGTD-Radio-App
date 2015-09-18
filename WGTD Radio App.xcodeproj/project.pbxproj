@@ -139,7 +139,7 @@
 		B60E36AD1B1281F4004C142C /* UIView+Round.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Round.m"; sourceTree = "<group>"; };
 		B60E36B31B13CA84004C142C /* broadwave (2).m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "broadwave (2).m3u"; sourceTree = "<group>"; };
 		B60E36B51B13CAFE004C142C /* Sportsweb.m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sportsweb.m3u; sourceTree = "<group>"; };
-		B60E52EB1ABFB0CB0019505B /* WGTD Radio App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WGTD Radio App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B60E52EB1ABFB0CB0019505B /* WGTD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WGTD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60E52EF1ABFB0CB0019505B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B60E52F01ABFB0CB0019505B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B60E52F21ABFB0CB0019505B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -323,7 +323,7 @@
 		B60E52EC1ABFB0CB0019505B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B60E52EB1ABFB0CB0019505B /* WGTD Radio App.app */,
+				B60E52EB1ABFB0CB0019505B /* WGTD.app */,
 				B60E53041ABFB0CB0019505B /* WGTD Radio AppTests.xctest */,
 			);
 			name = Products;
@@ -432,9 +432,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B60E52EA1ABFB0CB0019505B /* WGTD Radio App */ = {
+		B60E52EA1ABFB0CB0019505B /* WGTD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B60E530E1ABFB0CC0019505B /* Build configuration list for PBXNativeTarget "WGTD Radio App" */;
+			buildConfigurationList = B60E530E1ABFB0CC0019505B /* Build configuration list for PBXNativeTarget "WGTD" */;
 			buildPhases = (
 				B60E52E71ABFB0CB0019505B /* Sources */,
 				B60E52E81ABFB0CB0019505B /* Frameworks */,
@@ -444,9 +444,9 @@
 			);
 			dependencies = (
 			);
-			name = "WGTD Radio App";
+			name = WGTD;
 			productName = "WGTD Radio App";
-			productReference = B60E52EB1ABFB0CB0019505B /* WGTD Radio App.app */;
+			productReference = B60E52EB1ABFB0CB0019505B /* WGTD.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B60E53031ABFB0CB0019505B /* WGTD Radio AppTests */ = {
@@ -504,7 +504,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B60E52EA1ABFB0CB0019505B /* WGTD Radio App */,
+				B60E52EA1ABFB0CB0019505B /* WGTD */,
 				B60E53031ABFB0CB0019505B /* WGTD Radio AppTests */,
 			);
 		};
@@ -592,7 +592,7 @@
 /* Begin PBXTargetDependency section */
 		B60E53061ABFB0CB0019505B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B60E52EA1ABFB0CB0019505B /* WGTD Radio App */;
+			target = B60E52EA1ABFB0CB0019505B /* WGTD */;
 			targetProxy = B60E53051ABFB0CB0019505B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -827,7 +827,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B60E530E1ABFB0CC0019505B /* Build configuration list for PBXNativeTarget "WGTD Radio App" */ = {
+		B60E530E1ABFB0CC0019505B /* Build configuration list for PBXNativeTarget "WGTD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B60E530F1ABFB0CC0019505B /* Debug */,
