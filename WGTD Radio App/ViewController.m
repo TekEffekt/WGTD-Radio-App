@@ -54,6 +54,8 @@
 @property(nonatomic) int bannerNumber;
 @property(nonatomic, strong) NSMutableArray *bannerAdArray;
 
+@property(nonatomic) BOOL noAds;
+
 @property(strong, nonatomic) JFMinimalNotification *notification;
 
 @end
@@ -90,6 +92,13 @@
 {
     [super viewWillAppear:animated];
     [self setupViews];
+    
+//    if(self.noAds)
+//    {
+//        self.bannerAdArray.removeAllObjects;
+//        [self grabBannerImagesFromServer];
+//        [self checkForImages];
+//    }
 }
 
 - (void)viewDidLayoutSubviews
@@ -103,9 +112,13 @@
 
 - (void)checkForImages
 {
-    if(self.bannerAdArray.count < 2)
+    if(self.noAds)
     {
         self.bannerHeightConst.constant = 0;
+    } else
+    {
+        self.bannerHeightConst.constant = 50;
+        [self.view setNeedsDisplay];
     }
 }
 
@@ -394,7 +407,7 @@
 
 - (void)changeAdBanner
 {
-    if(self.bannerAdArray.count > 1)
+    if(!self.noAds)
     {
         self.bannerNumber += 1;
         
@@ -506,6 +519,7 @@
         return true;
     } else
     {
+        self.noAds = true;
         return false;
     }
 }
@@ -524,6 +538,12 @@
     if (self.bannerAdArray.count > 1)
     {
         self.bannerImage.image = self.bannerAdArray.firstObject;
+        self.noAds = false;
+        NSLog(@"Not working");
+    } else
+    {
+        NSLog(@"WOrking");
+        self.noAds = true;
     }
 }
 
