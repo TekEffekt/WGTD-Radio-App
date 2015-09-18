@@ -103,7 +103,7 @@
 
 - (void)checkForImages
 {
-    if(self.bannerAdArray.count == 0)
+    if(self.bannerAdArray.count < 2)
     {
         self.bannerHeightConst.constant = 0;
     }
@@ -394,14 +394,17 @@
 
 - (void)changeAdBanner
 {
-    self.bannerNumber += 1;
-    
-    if(self.bannerNumber == self.bannerAdArray.count)
+    if(self.bannerAdArray.count > 1)
     {
-        self.bannerNumber = 0;
+        self.bannerNumber += 1;
+        
+        if(self.bannerNumber == self.bannerAdArray.count)
+        {
+            self.bannerNumber = 0;
+        }
+        
+        self.bannerImage.image = self.bannerAdArray[self.bannerNumber];
     }
-    
-    self.bannerImage.image = self.bannerAdArray[self.bannerNumber];
 }
 
 - (void)updateWaveView
@@ -510,11 +513,17 @@
 - (void)turnDataIntoBannerImages:(NSData*)data
 {
     NSDictionary *xmlDict = [NSDictionary dictionaryWithXMLData:data];
-    NSArray *images = [xmlDict valueForKey:@"images"][@"image"][@"item"];
+    NSLog(@"%@", xmlDict);
+    NSArray *images = [xmlDict valueForKeyPath:@"images"][@"image"][@"item"];
     
     for (NSDictionary *image in images)
     {
         [self retrieveImageFromUrl:image[@"imagefilename"]];
+    }
+    
+    if (self.bannerAdArray.count > 1)
+    {
+        self.bannerImage.image = self.bannerAdArray.firstObject;
     }
 }
 
