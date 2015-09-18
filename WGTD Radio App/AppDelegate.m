@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "GAIFields.h"
 #import "GAI.h"
+#import "Networking.h"
 
 @interface AppDelegate ()
 
@@ -33,6 +34,12 @@
     
     // Initialize tracker. Replace with your tracking ID.
     [[GAI sharedInstance] trackerWithTrackingId:@"UA-63784829-1"];
+    
+    if([[NSUserDefaults standardUserDefaults] valueForKey:@"Api Key"] == nil)
+    {
+        NSLog(@"Here");
+        [Networking registerWithImageServer];
+    }
     
     return YES;
 }

@@ -66,6 +66,8 @@
 		B60E53C51ABFFF440019505B /* stream.m3u in Resources */ = {isa = PBXBuildFile; fileRef = B60E53C41ABFFF440019505B /* stream.m3u */; };
 		B63F05971ADB0E450040168F /* broadwave.m3u in Resources */ = {isa = PBXBuildFile; fileRef = B63F05961ADB0E450040168F /* broadwave.m3u */; };
 		B63F05991ADB0E4A0040168F /* broadwave (1).m3u in Resources */ = {isa = PBXBuildFile; fileRef = B63F05981ADB0E4A0040168F /* broadwave (1).m3u */; };
+		B6DC26851BABB9830056AD3C /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DC26841BABB9830056AD3C /* Networking.m */; settings = {ASSET_TAGS = (); }; };
+		B6DC26891BABFD0F0056AD3C /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DC26881BABFD0F0056AD3C /* XMLDictionary.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +184,10 @@
 		B60E53C41ABFFF440019505B /* stream.m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream.m3u; sourceTree = "<group>"; };
 		B63F05961ADB0E450040168F /* broadwave.m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = broadwave.m3u; sourceTree = "<group>"; };
 		B63F05981ADB0E4A0040168F /* broadwave (1).m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "broadwave (1).m3u"; sourceTree = "<group>"; };
+		B6DC26831BABB9830056AD3C /* Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
+		B6DC26841BABB9830056AD3C /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
+		B6DC26871BABFD0F0056AD3C /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDictionary.h; sourceTree = "<group>"; };
+		B6DC26881BABFD0F0056AD3C /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLDictionary.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +349,8 @@
 				B60E36B31B13CA84004C142C /* broadwave (2).m3u */,
 				B60E53C41ABFFF440019505B /* stream.m3u */,
 				B63F05961ADB0E450040168F /* broadwave.m3u */,
+				B6DC26871BABFD0F0056AD3C /* XMLDictionary.h */,
+				B6DC26881BABFD0F0056AD3C /* XMLDictionary.m */,
 				B60E52F21ABFB0CB0019505B /* AppDelegate.h */,
 				B60E52F31ABFB0CB0019505B /* AppDelegate.m */,
 				B60E533F1ABFB27D0019505B /* View Controllers */,
@@ -397,6 +405,8 @@
 			children = (
 				B60E52F51ABFB0CB0019505B /* ViewController.h */,
 				B60E52F61ABFB0CB0019505B /* ViewController.m */,
+				B6DC26831BABB9830056AD3C /* Networking.h */,
+				B6DC26841BABB9830056AD3C /* Networking.m */,
 				B60651F81AC31550008300D8 /* InfoViewController.h */,
 				B60651F91AC31550008300D8 /* InfoViewController.m */,
 			);
@@ -545,6 +555,7 @@
 				B60E53C31ABFF01E0019505B /* WaveView.m in Sources */,
 				B60E367E1B0FF73F004C142C /* http_stream.cpp in Sources */,
 				B60E53B51ABFE14A0019505B /* NSMutableArray+STKAudioPlayer.m in Sources */,
+				B6DC26891BABFD0F0056AD3C /* XMLDictionary.m in Sources */,
 				B60E36B01B1281F4004C142C /* NSInvocation+Constructors.m in Sources */,
 				B60E53B81ABFE14A0019505B /* STKCoreFoundationDataSource.m in Sources */,
 				B60E36AF1B1281F4004C142C /* JFMinimalNotificationArt.m in Sources */,
@@ -554,6 +565,7 @@
 				B60E36791B0FF73F004C142C /* audio_queue.cpp in Sources */,
 				B60E36921B0FF748004C142C /* FSAudioStream.mm in Sources */,
 				B60E53BA1ABFE14A0019505B /* STKDataSourceWrapper.m in Sources */,
+				B6DC26851BABB9830056AD3C /* Networking.m in Sources */,
 				B60E36A21B0FFFE5004C142C /* Reachability.m in Sources */,
 				B60E52F71ABFB0CB0019505B /* ViewController.m in Sources */,
 				B60E53BB1ABFE14A0019505B /* STKHTTPDataSource.m in Sources */,
