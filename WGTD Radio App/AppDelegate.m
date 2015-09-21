@@ -38,7 +38,10 @@
     if([[NSUserDefaults standardUserDefaults] valueForKey:@"Api Key"] == nil)
     {
         NSLog(@"Here");
-        [Networking registerWithImageServer];
+        if([Networking imageserverAvailable])
+        {
+            [Networking registerWithImageServer];
+        }
     }
     
     return YES;

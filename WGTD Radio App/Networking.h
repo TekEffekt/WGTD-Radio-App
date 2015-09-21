@@ -10,6 +10,7 @@
 
 @interface Networking : UIViewController
 
-+ (void)registerWithImageServer;
++ (BOOL)registerWithImageServer;
++ (BOOL)imageserverAvailable;
 
 @end

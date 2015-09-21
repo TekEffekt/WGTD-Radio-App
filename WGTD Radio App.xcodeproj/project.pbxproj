@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2996BC3D64858FC9F63F12B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB05FFB022EA0E3C4ACDC19 /* libPods.a */; };
+		0DF112182D6B67B8A99F1ECE /* libPods-WGTD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0ED4B7B2A564BCAF96E0A9 /* libPods-WGTD.a */; };
 		B60651FA1AC31550008300D8 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60651F91AC31550008300D8 /* InfoViewController.m */; };
 		B609C7181B27BF890093EB04 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B609C7171B27BF890093EB04 /* CoreData.framework */; };
 		B609C71A1B27BF900093EB04 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B609C7191B27BF900093EB04 /* SystemConfiguration.framework */; };
@@ -82,8 +82,10 @@
 
 /* Begin PBXFileReference section */
 		0F47E372659D20EE99F03F5A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		2D0ED4B7B2A564BCAF96E0A9 /* libPods-WGTD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WGTD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB05FFB022EA0E3C4ACDC19 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C156E2C158C6F9BEF8D34E2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		AEDC07FE91359C06D4A8527A /* Pods-WGTD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WGTD.release.xcconfig"; path = "Pods/Target Support Files/Pods-WGTD/Pods-WGTD.release.xcconfig"; sourceTree = "<group>"; };
 		B60651F21AC31268008300D8 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		B60651F31AC31268008300D8 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		B60651F81AC31550008300D8 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		B6DC26841BABB9830056AD3C /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
 		B6DC26871BABFD0F0056AD3C /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDictionary.h; sourceTree = "<group>"; };
 		B6DC26881BABFD0F0056AD3C /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLDictionary.m; sourceTree = "<group>"; };
+		F0D56873AAAC7A8C0ECF23D6 /* Pods-WGTD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WGTD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WGTD/Pods-WGTD.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,7 +211,7 @@
 				B60E53551ABFB9800019505B /* AudioToolbox.framework in Frameworks */,
 				B60E53531ABFB97A0019505B /* GLKit.framework in Frameworks */,
 				B60E53511ABFB96D0019505B /* AVFoundation.framework in Frameworks */,
-				2996BC3D64858FC9F63F12B1 /* libPods.a in Frameworks */,
+				0DF112182D6B67B8A99F1ECE /* libPods-WGTD.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +230,8 @@
 			children = (
 				8C156E2C158C6F9BEF8D34E2 /* Pods.debug.xcconfig */,
 				0F47E372659D20EE99F03F5A /* Pods.release.xcconfig */,
+				F0D56873AAAC7A8C0ECF23D6 /* Pods-WGTD.debug.xcconfig */,
+				AEDC07FE91359C06D4A8527A /* Pods-WGTD.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				4BB05FFB022EA0E3C4ACDC19 /* libPods.a */,
+				2D0ED4B7B2A564BCAF96E0A9 /* libPods-WGTD.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -446,9 +452,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B60E530E1ABFB0CC0019505B /* Build configuration list for PBXNativeTarget "WGTD" */;
 			buildPhases = (
+				3D4F25FC542B18B8C92FC475 /* Check Pods Manifest.lock */,
 				B60E52E71ABFB0CB0019505B /* Sources */,
 				B60E52E81ABFB0CB0019505B /* Frameworks */,
 				B60E52E91ABFB0CB0019505B /* Resources */,
+				CF5BDC08473A7F30095C82F0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -488,7 +496,7 @@
 				TargetAttributes = {
 					B60E52EA1ABFB0CB0019505B = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = F8BA5TMX9M;
+						DevelopmentTeam = 8KC4YV2H6U;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -544,6 +552,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D4F25FC542B18B8C92FC475 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CF5BDC08473A7F30095C82F0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WGTD/Pods-WGTD-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B60E52E71ABFB0CB0019505B /* Sources */ = {
@@ -709,7 +750,7 @@
 		};
 		B60E530F1ABFB0CC0019505B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C156E2C158C6F9BEF8D34E2 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = F0D56873AAAC7A8C0ECF23D6 /* Pods-WGTD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -744,7 +785,7 @@
 					Radio,
 					App/GoogleAnalytics,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.uwp.WGTD-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.uwp.WGTD-Radio";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -752,7 +793,7 @@
 		};
 		B60E53101ABFB0CC0019505B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F47E372659D20EE99F03F5A /* Pods.release.xcconfig */;
+			baseConfigurationReference = AEDC07FE91359C06D4A8527A /* Pods-WGTD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -787,7 +828,7 @@
 					Radio,
 					App/GoogleAnalytics,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.uwp.WGTD-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.uwp.WGTD-Radio";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

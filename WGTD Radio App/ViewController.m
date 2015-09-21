@@ -488,22 +488,9 @@
     });
 }
 
-- (BOOL)imageserverAvailable
-{
-    NSURL *url=[NSURL URLWithString:@"http://appfactoryuwp.com/imageserver/api/yum/key/104"];
-    NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:url];
-    [request setHTTPMethod:@"GET"];
-    [request addValue:@"b5d4af3cfb232c01311b183d42d05648" forHTTPHeaderField:@"X-API-KEY"];
-    [request addValue:@"73509e2f8981fd1247f400de53c60b0f8053fbb5" forHTTPHeaderField:@"X-SHHH-ITS-A-SECRET"];
-    NSHTTPURLResponse *response;
-    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error: NULL];
-    
-    return ([response statusCode]==200)?YES:NO;
-}
-
 - (BOOL)grabBannerImagesFromServer
 {
-    if([self imageserverAvailable])
+    if([Networking imageserverAvailable])
     {
         NSString *apiKey = [[NSUserDefaults standardUserDefaults] valueForKey:@"Api Key"];
         
@@ -512,8 +499,9 @@
         [request addValue:apiKey forHTTPHeaderField:@"X-API-KEY"];
         
         NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+        NSHTTPURLResponse *response;
         
-        NSData *xmlData = [NSURLConnection sendSynchronousRequest:request returningResponse:NULL error:NULL];
+        NSData *xmlData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:NULL];
         [self turnDataIntoBannerImages:xmlData];
 
         return true;
@@ -527,7 +515,6 @@
 - (void)turnDataIntoBannerImages:(NSData*)data
 {
     NSDictionary *xmlDict = [NSDictionary dictionaryWithXMLData:data];
-    NSLog(@"%@", xmlDict);
     NSArray *images = [xmlDict valueForKeyPath:@"images"][@"image"][@"item"];
     
     for (NSDictionary *image in images)
