@@ -315,7 +315,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
     NSHTTPURLResponse *response;
     [NSURLConnection sendSynchronousRequest:request returningResponse:&response error: NULL];
     
-    return ([response statusCode]>= 200 & [response statusCode] < 300)?YES:NO;
+    return ([response statusCode]== 204)?YES:NO;
 }
 
 
