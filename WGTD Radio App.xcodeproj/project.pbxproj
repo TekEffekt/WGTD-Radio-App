@@ -66,8 +66,9 @@
 		B60E53C51ABFFF440019505B /* stream.m3u in Resources */ = {isa = PBXBuildFile; fileRef = B60E53C41ABFFF440019505B /* stream.m3u */; };
 		B63F05971ADB0E450040168F /* broadwave.m3u in Resources */ = {isa = PBXBuildFile; fileRef = B63F05961ADB0E450040168F /* broadwave.m3u */; };
 		B63F05991ADB0E4A0040168F /* broadwave (1).m3u in Resources */ = {isa = PBXBuildFile; fileRef = B63F05981ADB0E4A0040168F /* broadwave (1).m3u */; };
-		B6DC26851BABB9830056AD3C /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DC26841BABB9830056AD3C /* Networking.m */; settings = {ASSET_TAGS = (); }; };
-		B6DC26891BABFD0F0056AD3C /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DC26881BABFD0F0056AD3C /* XMLDictionary.m */; settings = {ASSET_TAGS = (); }; };
+		B6DC26851BABB9830056AD3C /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DC26841BABB9830056AD3C /* Networking.m */; };
+		B6DC26891BABFD0F0056AD3C /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DC26881BABFD0F0056AD3C /* XMLDictionary.m */; };
+		B6FA9FED1BE9F34E00BC8F5F /* ChannelDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA9FEC1BE9F34E00BC8F5F /* ChannelDropdown.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +191,8 @@
 		B6DC26841BABB9830056AD3C /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
 		B6DC26871BABFD0F0056AD3C /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDictionary.h; sourceTree = "<group>"; };
 		B6DC26881BABFD0F0056AD3C /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLDictionary.m; sourceTree = "<group>"; };
+		B6FA9FEC1BE9F34E00BC8F5F /* ChannelDropdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelDropdown.swift; sourceTree = "<group>"; };
+		B6FA9FEF1BE9F37C00BC8F5F /* WGTD-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGTD-Bridging-Header.h"; sourceTree = "<group>"; };
 		F0D56873AAAC7A8C0ECF23D6 /* Pods-WGTD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WGTD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WGTD/Pods-WGTD.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -361,7 +364,9 @@
 				B60E52F31ABFB0CB0019505B /* AppDelegate.m */,
 				B60E533F1ABFB27D0019505B /* View Controllers */,
 				B60E52F81ABFB0CB0019505B /* Main.storyboard */,
+				B6FA9FEC1BE9F34E00BC8F5F /* ChannelDropdown.swift */,
 				B60651F21AC31268008300D8 /* InfoViewController.h */,
+				B6FA9FEF1BE9F37C00BC8F5F /* WGTD-Bridging-Header.h */,
 				B60651F31AC31268008300D8 /* InfoViewController.m */,
 				B60E52FB1ABFB0CB0019505B /* Images.xcassets */,
 				B60E52FD1ABFB0CB0019505B /* LaunchScreen.xib */,
@@ -491,6 +496,7 @@
 		B60E52E31ABFB0CB0019505B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "University Of Wiscosnin Parkside";
 				TargetAttributes = {
@@ -605,6 +611,7 @@
 				B60E36801B0FF73F004C142C /* input_stream.cpp in Sources */,
 				B60E36791B0FF73F004C142C /* audio_queue.cpp in Sources */,
 				B60E36921B0FF748004C142C /* FSAudioStream.mm in Sources */,
+				B6FA9FED1BE9F34E00BC8F5F /* ChannelDropdown.swift in Sources */,
 				B60E53BA1ABFE14A0019505B /* STKDataSourceWrapper.m in Sources */,
 				B6DC26851BABB9830056AD3C /* Networking.m in Sources */,
 				B60E36A21B0FFFE5004C142C /* Reachability.m in Sources */,
@@ -689,6 +696,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -731,6 +739,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -753,6 +762,7 @@
 			baseConfigurationReference = F0D56873AAAC7A8C0ECF23D6 /* Pods-WGTD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -788,6 +798,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.uwp.WGTD-Radio";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WGTD Radio App/WGTD-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -796,6 +808,7 @@
 			baseConfigurationReference = AEDC07FE91359C06D4A8527A /* Pods-WGTD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -831,6 +844,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.uwp.WGTD-Radio";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WGTD Radio App/WGTD-Bridging-Header.h";
 			};
 			name = Release;
 		};

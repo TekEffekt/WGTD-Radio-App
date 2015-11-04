@@ -284,7 +284,7 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
     self.currentStyle = style;
     switch (style) {
         case JFMinimalNotificationStyleError: {
-            UIColor* primaryColor = [UIColor notificationRedColor];
+            UIColor* primaryColor = [[UIColor notificationRedColor] colorWithAlphaComponent:0.9];
             UIColor* secondaryColor = [UIColor notificationWhiteColor];
             self.contentView.backgroundColor = primaryColor;
             self.titleLabel.textColor = secondaryColor;
@@ -295,7 +295,7 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
         }
             
         case JFMinimalNotificationStyleSuccess: {
-            UIColor* primaryColor = [UIColor notificationGreenColor];
+            UIColor* primaryColor = [[UIColor notificationGreenColor] colorWithAlphaComponent:0.9];
             UIColor* secondaryColor = [UIColor notificationWhiteColor];
             self.contentView.backgroundColor = primaryColor;
             self.titleLabel.textColor = secondaryColor;
@@ -306,7 +306,7 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
         }
             
         case JFMinimalNotificationStyleInfo: {
-            UIColor* primaryColor = [UIColor notificationOrangeColor];
+            UIColor* primaryColor = [[UIColor notificationOrangeColor] colorWithAlphaComponent:0.9];
             UIColor* secondaryColor = [UIColor notificationWhiteColor];
             self.contentView.backgroundColor = primaryColor;
             self.titleLabel.textColor = secondaryColor;
@@ -317,7 +317,7 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
         }
             
         case JFMinimalNotificationStyleWarning: {
-            UIColor* primaryColor = [UIColor notificationYellowColor];
+            UIColor* primaryColor = [[UIColor notificationYellowColor] colorWithAlphaComponent:0.9];
             UIColor* secondaryColor = [UIColor notificationBlackColor];
             self.contentView.backgroundColor = primaryColor;
             self.titleLabel.textColor = secondaryColor;

@@ -11,5 +11,7 @@
 @interface ViewController : UIViewController
 
 
+- (void) dropDownChosenWithChannel:(NSString*)channelName;
+
 @end
 

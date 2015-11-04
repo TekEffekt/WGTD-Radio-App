@@ -10,6 +10,7 @@
 
 @interface Networking : UIViewController
 
++ (NSArray*)requestBannerImagesFromServer;
 + (BOOL)registerWithImageServer;
 + (BOOL)imageserverAvailable;
 

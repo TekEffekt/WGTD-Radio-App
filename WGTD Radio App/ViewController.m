@@ -18,7 +18,7 @@
 #import "GAIDictionaryBuilder.h"
 #import "Networking.h"
 #import "XMLDictionary.h"
-
+#import "WGTD-Swift.h"
 
 #define BlockWeakObject(o) __typeof(o) __weak
 #define BlockWeakSelf BlockWeakObject(self)
@@ -54,9 +54,9 @@
 @property(nonatomic) int bannerNumber;
 @property(nonatomic, strong) NSMutableArray *bannerAdArray;
 
-@property(nonatomic) BOOL noAds;
-
 @property(strong, nonatomic) JFMinimalNotification *notification;
+
+@property(strong, nonatomic) ChannelDropdown *dropdown;
 
 @end
 
@@ -68,7 +68,6 @@
     [super viewDidLoad];
     
     self.bannerAdArray = [[NSMutableArray alloc] init];
-    [self grabBannerImagesFromServer];
     
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
         self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -77,7 +76,7 @@
     [self scheduleWaveAndAdTimers];
     [self setupGoogleAnalytics];
     
-    self.navigationController.navigationBar.topItem.title = self.stationImageNames[self.channelIndex];
+    self.navigationController.navigationBar.topItem.title = @"";
     
     self.bannerNumber = 0;
     
@@ -85,7 +84,6 @@
     [self setupAudioPlayers];
     
     [self grabBannerImagesFromServer];
-    [self checkForImages];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -93,12 +91,9 @@
     [super viewWillAppear:animated];
     [self setupViews];
     
-//    if(self.noAds)
-//    {
-//        self.bannerAdArray.removeAllObjects;
-//        [self grabBannerImagesFromServer];
-//        [self checkForImages];
-//    }
+    self.dropdown = [[ChannelDropdown alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) items:@[@"Classical",@"Jazz",@"Reading",@"Sports"] title:@"Classical" nav: self.navigationController];
+    self.dropdown.master = self;
+    [self.navigationController.view addSubview:self.dropdown];
 }
 
 - (void)viewDidLayoutSubviews
@@ -107,18 +102,6 @@
     if(!self.waveView)
     {
         [self setupWaveView];
-    }
-}
-
-- (void)checkForImages
-{
-    if(self.noAds)
-    {
-        self.bannerHeightConst.constant = 0;
-    } else
-    {
-        self.bannerHeightConst.constant = 50;
-        [self.view setNeedsDisplay];
     }
 }
 
@@ -291,6 +274,41 @@
 }
 
 #pragma mark - Button Action Handlers
+- (void) dropDownChosenWithChannel:(NSString*)channelName
+{
+    int index = [self.stationImageNames indexOfObject:channelName];
+    
+    self.channelIndex = index;
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:self.channelIndex forKey:@"Channel Index"];
+    self.stationImage.image = [UIImage imageNamed:self.stationImageNames[self.channelIndex]];
+    
+    self.audioPlayer.url = [NSURL URLWithString:self.channels[self.channelIndex]];
+    
+    if(self.playing)
+    {
+        [self.audioPlayer stop];
+        [self.stkPlayer stop];
+        
+        UIImage *image = [UIImage imageNamed:@"play"];
+        image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [self.playButton setBackgroundImage:image forState:UIControlStateNormal];
+        
+        self.playing = NO;
+        self.streamReady = NO;
+        
+        
+    }
+    
+    if(self.notification)
+    {
+        [self.notification dismiss];
+    }
+    
+    self.navigationController.navigationItem.title = self.channelLabelTexts[self.channelIndex];
+    [self setSkipButtonLabels];
+}
+
 - (IBAction)infoButtonPressed:(UIBarButtonItem *)sender
 {
     [self performSegueWithIdentifier:@"showInfo" sender:self];
@@ -308,7 +326,7 @@
     
     if(!self.playing)
     {
-        [self checkInternet];
+        [self checkInternetWithPossibleAlert];
         
         NSLog(@"%@", self.channels[self.channelIndex]);
         [self.audioPlayer play];
@@ -380,7 +398,7 @@
         [self.notification dismiss];
     }
     
-    self.navigationController.navigationItem.title = self.channelLabelTexts[self.channelIndex];
+    self.dropdown.titleText.text = self.stationImageNames[self.channelIndex];
     [self setSkipButtonLabels];
 }
 
@@ -407,7 +425,7 @@
 
 - (void)changeAdBanner
 {
-    if(!self.noAds)
+    if(self.bannerAdArray.count > 0)
     {
         self.bannerNumber += 1;
         
@@ -472,7 +490,7 @@
     return YES;
 }
 
-- (void)checkInternet
+- (void)checkInternetWithPossibleAlert
 {
     dispatch_queue_t background = dispatch_queue_create("Internet Check", NULL);
     dispatch_async(background, ^{
@@ -488,61 +506,12 @@
     });
 }
 
-- (BOOL)grabBannerImagesFromServer
+- (void)grabBannerImagesFromServer
 {
-    if([Networking imageserverAvailable])
-    {
-        NSString *apiKey = [[NSUserDefaults standardUserDefaults] valueForKey:@"Api Key"];
-        
-        NSURL *url = [NSURL URLWithString:@"http://appfactoryuwp.com/imageserver/api/apt"];
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-        [request addValue:apiKey forHTTPHeaderField:@"X-API-KEY"];
-        
-        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-        NSHTTPURLResponse *response;
-        
-        NSData *xmlData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:NULL];
-        [self turnDataIntoBannerImages:xmlData];
-
-        return true;
-    } else
-    {
-        self.noAds = true;
-        return false;
-    }
-}
-
-- (void)turnDataIntoBannerImages:(NSData*)data
-{
-    NSDictionary *xmlDict = [NSDictionary dictionaryWithXMLData:data];
-    NSArray *images = [xmlDict valueForKeyPath:@"images"][@"image"][@"item"];
-    
-    for (NSDictionary *image in images)
-    {
-        [self retrieveImageFromUrl:image[@"imagefilename"]];
-    }
-    
-    if (self.bannerAdArray.count > 1)
-    {
-        self.bannerImage.image = self.bannerAdArray.firstObject;
-        self.noAds = false;
-        NSLog(@"Not working");
-    } else
-    {
-        NSLog(@"WOrking");
-        self.noAds = true;
-    }
-}
-
-- (void)retrieveImageFromUrl:(NSString*)urlString
-{
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    NSHTTPURLResponse *response;
-    NSData *imageData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:NULL];
-    UIImage *image = [UIImage imageWithData:imageData];
-    
-    [self.bannerAdArray addObject:image];
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue addOperationWithBlock:^{
+        self.bannerAdArray = [Networking requestBannerImagesFromServer];
+    }];
 }
 
 # pragma mark - Other

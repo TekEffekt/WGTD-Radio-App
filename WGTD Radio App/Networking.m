@@ -7,6 +7,7 @@
 //
 
 #import "Networking.h"
+#import "XMLDictionary.h"
 
 @implementation Networking
 
@@ -49,6 +50,66 @@
     
 //    return ([response statusCode]==200)?YES:NO;
     return YES;
+}
+
++ (NSArray*)requestBannerImagesFromServer
+{
+    NSArray *bannerImages = nil;
+    
+    if([Networking imageserverAvailable])
+    {
+        NSString *apiKey = [[NSUserDefaults standardUserDefaults] valueForKey:@"Api Key"];
+        
+        NSURL *url = [NSURL URLWithString:@"http://appfactoryuwp.com/imageserver/api/apt"];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request addValue:apiKey forHTTPHeaderField:@"X-API-KEY"];
+        
+        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+        NSHTTPURLResponse *response;
+        
+        NSData *xmlData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:NULL];
+        bannerImages = [self getImagesFromData:xmlData];
+    }
+    
+    return bannerImages;
+}
+
++ (NSArray*)getImagesFromData:(NSData*)data
+{
+    NSDictionary *xml = [self turnDataIntoXml:data];
+    NSLog(@"XML %@", xml);
+    
+    NSArray *imageUrls = [xml valueForKeyPath:@"images"][@"image"];
+    NSLog(@"Urls %@", imageUrls);
+
+    NSMutableArray *images = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary *imageUrl in imageUrls)
+    {
+        [images addObject:[self retrieveImageFromUrl:imageUrl[@"imagefilename"]]];
+    }
+    
+    NSLog(@"%@", imageUrls);
+    
+    return  images;
+}
+
++ (NSDictionary*)turnDataIntoXml:(NSData*)data
+{
+    NSDictionary *xmlDict = [NSDictionary dictionaryWithXMLData:data];
+    
+    return xmlDict;
+}
+
++ (UIImage*)retrieveImageFromUrl:(NSString*)urlString
+{
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSHTTPURLResponse *response;
+    NSData *imageData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:NULL];
+    UIImage *image = [UIImage imageWithData:imageData];
+    
+    return image;
 }
 
 @end
