@@ -180,7 +180,7 @@
 {
     self.channels = @[@"http://media.gtc.edu:8000/stream", @"http://199.255.3.11:88/broadwave.mp3?src=1&rate=1&ref=http%3A%2F%2Fwww.wgtd.org%2Fhd2.asp",
                       @"http://199.255.3.11:88/broadwave.mp3?src=4&rate=1&ref=http%3A%2F%2Fwww.wgtd.org%2Freading.asp",
-                      @"http://sportsweb.gtc.edu:8000/Sportsweb"];
+                      @"http://sportsweb.gtc.edu:8000/stream"];
     self.channelLabelTexts = @[@"Classical Radio", @"Jazz Radio", @"Reading Service", @"Sportsweb Radio"];
     self.skipButtonLabelText = @[@"Classical", @"Jazz", @"Reading", @"Sportsweb"];
     self.stationImageNames = @[@"Classical", @"Jazz", @"Reading", @"Sports"];
@@ -331,6 +331,7 @@
         NSLog(@"%@", self.channels[self.channelIndex]);
         [self.audioPlayer play];
         [self.stkPlayer play: self.channels[self.channelIndex]];
+        NSLog(@"%@", self.channels[self.channelIndex]);
         UIImage *image = [UIImage imageNamed:@"pause"];
         image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         [self.playButton setBackgroundImage:image forState:UIControlStateNormal];
