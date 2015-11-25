@@ -169,7 +169,7 @@ import Foundation
             super.init(frame: frame, style: style)
             self.dataSource = self
             self.delegate = self
-            self.separatorColor = UIColor.clearColor()
+            //self.separatorColor = UIColor.clearColor()
         }
         
         required init?(coder aDecoder: NSCoder) {

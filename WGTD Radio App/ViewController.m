@@ -13,12 +13,12 @@
 #import "FSAudioStream.h"
 #import "Reachability.h"
 #import "JFMinimalNotification.h"
-#import "GAI.h"
-#import "GAIFields.h"
-#import "GAIDictionaryBuilder.h"
+//#import "GAI.h"
+//#import "GAIFields.h"
+//#import "GAIDictionaryBuilder.h"
 #import "Networking.h"
 #import "XMLDictionary.h"
-#import "WGTD-Swift.h"
+//#import "WGTD-Swift.h"
 
 #define BlockWeakObject(o) __typeof(o) __weak
 #define BlockWeakSelf BlockWeakObject(self)
@@ -56,7 +56,7 @@
 
 @property(strong, nonatomic) JFMinimalNotification *notification;
 
-@property(strong, nonatomic) ChannelDropdown *dropdown;
+//@property(strong, nonatomic) ChannelDropdown *dropdown;
 
 @end
 
@@ -91,9 +91,9 @@
     [super viewWillAppear:animated];
     [self setupViews];
     
-    self.dropdown = [[ChannelDropdown alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) items:@[@"Classical",@"Jazz",@"Reading",@"Sports"] title:@"Classical" nav: self.navigationController];
-    self.dropdown.master = self;
-    [self.navigationController.view addSubview:self.dropdown];
+    //self.dropdown = [[ChannelDropdown alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) items:@[@"Classical",@"Jazz",@"Reading",@"Sports"] title:@"Classical" nav: self.navigationController];
+    //self.dropdown.master = self;
+    //[self.navigationController.view addSubview:self.dropdown];
 }
 
 - (void)viewDidLayoutSubviews
@@ -162,12 +162,12 @@
 
 - (void)setupGoogleAnalytics
 {
-    id tracker = [[GAI sharedInstance] defaultTracker];
-    
-    [tracker set:kGAIScreenName value:@"Main Screen"];
-    
-    // manual screen tracking
-    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+//    id tracker = [[GAI sharedInstance] defaultTracker];
+//    
+//    [tracker set:kGAIScreenName value:@"Main Screen"];
+//    
+//    // manual screen tracking
+//    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)scheduleWaveAndAdTimers
@@ -399,7 +399,7 @@
         [self.notification dismiss];
     }
     
-    self.dropdown.titleText.text = self.stationImageNames[self.channelIndex];
+    //self.dropdown.titleText.text = self.stationImageNames[self.channelIndex];
     [self setSkipButtonLabels];
 }
 

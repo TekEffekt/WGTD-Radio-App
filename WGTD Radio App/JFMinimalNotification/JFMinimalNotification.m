@@ -29,10 +29,10 @@
 #import "UIColor+JFMinimalNotificationColors.h"
 #import "NSInvocation+Constructors.h"
 
-static CGFloat const kNotificationViewHeight = 85.0f;
+static CGFloat const kNotificationViewHeight = 150.0f;
 static CGFloat const kNotificationTitleLabelHeight = 20.0f;
-static CGFloat const kNotificationPadding = 20.0f;
-static CGFloat const kNotificationAccessoryPadding = 10.0f;
+static CGFloat const kNotificationPadding = 10.0f;
+static CGFloat const kNotificationAccessoryPadding = 80.0f;
 
 @interface JFMinimalNotification()
 
@@ -166,6 +166,8 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
 
 - (void)show
 {
+    self.subTitleLabel.font = [self.subTitleLabel.font fontWithSize:35];
+    
     if (self.isReadyToDisplay) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(minimalNotificationWillShowNotification:)]) {
             [self.delegate minimalNotificationWillShowNotification:self];
@@ -282,6 +284,7 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
     self.accessoryView.translatesAutoresizingMaskIntoConstraints = NO;
     
     self.currentStyle = style;
+    
     switch (style) {
         case JFMinimalNotificationStyleError: {
             UIColor* primaryColor = [[UIColor notificationRedColor] colorWithAlphaComponent:0.9];
@@ -348,8 +351,10 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
     NSDictionary* metrics = @{@"padding": @(kNotificationAccessoryPadding)};
     [self.accessoryView addConstraint:[NSLayoutConstraint constraintWithItem:imageView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.accessoryView attribute:NSLayoutAttributeCenterY multiplier:1.f constant:0.f]];
     [self.accessoryView addConstraint:[NSLayoutConstraint constraintWithItem:imageView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.accessoryView attribute:NSLayoutAttributeCenterX multiplier:1.f constant:0.f]];
-    [self.accessoryView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[imageView(<=30)]" options:0 metrics:metrics views:views]];
-    [self.accessoryView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[imageView(<=30)]" options:0 metrics:metrics views:views]];
+    [self.accessoryView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[imageView(<=40)]" options:0 metrics:metrics views:views]];
+    [self.accessoryView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[imageView(<=40)]" options:0 metrics:metrics views:views]];
+    //imageView.backgroundColor = [UIColor redColor];
+    
     [self setLeftAccessoryView:self.accessoryView animated:animated];
 }
 

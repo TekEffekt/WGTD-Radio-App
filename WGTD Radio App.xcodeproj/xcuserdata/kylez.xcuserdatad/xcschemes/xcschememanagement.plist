@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>WGTD copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>B60E53031ABFB0CB0019505B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B64D6FB61BFC79FE0065B515</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B6FCA8401BFCAAC90046178C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

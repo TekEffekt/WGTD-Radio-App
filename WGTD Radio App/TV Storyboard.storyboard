@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="Kbe-p9-ogf">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="fcd-Kb-Jjf">
+            <objects>
+                <viewController id="Kbe-p9-ogf" customClass="TVViewController" customModule="WGTD_TV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mUq-Kr-NJS"/>
+                        <viewControllerLayoutGuide type="bottom" id="O26-Vw-txP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6tC-vF-pLE">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dark" translatesAutoresizingMaskIntoConstraints="NO" id="DqQ-F3-0cd">
+                                <rect key="frame" x="0.0" y="8" width="1920" height="1080"/>
+                                <animations/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pY2-IL-E3u">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YfZ-Zw-2jd">
+                                    <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MpF-FV-GLH">
+                                            <rect key="frame" x="0.0" y="365" width="1920" height="350"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="tintColor" red="0.71372549019999998" green="0.14117647059999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="350" id="uZH-PI-6mM"/>
+                                            </constraints>
+                                        </view>
+                                        <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ktq-Fm-t0R">
+                                            <rect key="frame" x="0.0" y="954" width="1920" height="128"/>
+                                            <animations/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ry-OZ-JpU">
+                                            <rect key="frame" x="142" y="972" width="284" height="72"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="38"/>
+                                            <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                            <state key="normal" title="Classical">
+                                                <color key="titleColor" red="0.71372549019607845" green="0.14117647058823529" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <state key="focused" title="Classical">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ClT-Vj-VGN">
+                                            <rect key="frame" x="594" y="972" width="284" height="72"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="38"/>
+                                            <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                            <state key="normal" title="Jazz">
+                                                <color key="titleColor" red="0.71372549019607845" green="0.14117647058823529" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <state key="focused">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A44-xa-gmU">
+                                            <rect key="frame" x="1093" y="972" width="284" height="72"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="38"/>
+                                            <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                            <state key="normal" title="Reading">
+                                                <color key="titleColor" red="0.71372549019607845" green="0.14117647058823529" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <state key="focused" title="Reading">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YW1-aP-GQ9">
+                                            <rect key="frame" x="1512" y="972" width="284" height="72"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="38"/>
+                                            <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                            <state key="normal" title="Sports">
+                                                <color key="titleColor" red="0.71372549019607845" green="0.14117647058823529" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <state key="focused" title="Sports">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Classical" translatesAutoresizingMaskIntoConstraints="NO" id="2wt-lE-WI0">
+                                            <rect key="frame" x="680" y="72" width="560" height="300"/>
+                                            <animations/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.92646634615384615" colorSpace="calibratedRGB"/>
+                                        </imageView>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="MpF-FV-GLH" secondAttribute="trailing" id="awh-tD-fgo"/>
+                                        <constraint firstItem="MpF-FV-GLH" firstAttribute="leading" secondItem="YfZ-Zw-2jd" secondAttribute="leading" id="l0x-81-rVq"/>
+                                        <constraint firstItem="MpF-FV-GLH" firstAttribute="centerY" secondItem="YfZ-Zw-2jd" secondAttribute="centerY" id="rik-5Y-cxq"/>
+                                        <constraint firstItem="MpF-FV-GLH" firstAttribute="centerX" secondItem="YfZ-Zw-2jd" secondAttribute="centerX" id="vSy-89-B06"/>
+                                    </constraints>
+                                </view>
+                                <animations/>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                        </subviews>
+                        <animations/>
+                        <color key="tintColor" red="0.71372549019999998" green="0.14117647059999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="O26-Vw-txP" firstAttribute="top" secondItem="DqQ-F3-0cd" secondAttribute="bottom" id="197-43-PTp"/>
+                            <constraint firstItem="pY2-IL-E3u" firstAttribute="centerY" secondItem="6tC-vF-pLE" secondAttribute="centerY" id="3o6-xj-gLv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pY2-IL-E3u" secondAttribute="trailing" constant="-20" id="6py-3Y-TJP"/>
+                            <constraint firstItem="pY2-IL-E3u" firstAttribute="leading" secondItem="6tC-vF-pLE" secondAttribute="leadingMargin" constant="-20" id="IEh-HO-AZ3"/>
+                            <constraint firstItem="DqQ-F3-0cd" firstAttribute="top" secondItem="mUq-Kr-NJS" secondAttribute="bottom" id="UvJ-Wy-mfq"/>
+                            <constraint firstItem="pY2-IL-E3u" firstAttribute="top" secondItem="mUq-Kr-NJS" secondAttribute="bottom" id="ewg-Dr-bFg"/>
+                            <constraint firstItem="DqQ-F3-0cd" firstAttribute="leading" secondItem="6tC-vF-pLE" secondAttribute="leadingMargin" constant="-20" id="fuy-Gu-hKZ"/>
+                            <constraint firstItem="O26-Vw-txP" firstAttribute="top" secondItem="pY2-IL-E3u" secondAttribute="bottom" id="gfQ-Oo-Ozw"/>
+                            <constraint firstItem="pY2-IL-E3u" firstAttribute="centerX" secondItem="6tC-vF-pLE" secondAttribute="centerX" id="jEZ-tc-36a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DqQ-F3-0cd" secondAttribute="trailing" constant="-20" id="pcZ-Te-lsD"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="vTt-Zf-PER"/>
+                    <connections>
+                        <outlet property="background" destination="YfZ-Zw-2jd" id="VvT-Wg-qfx"/>
+                        <outlet property="stationImage" destination="2wt-lE-WI0" id="UJg-Yq-h2c"/>
+                        <outlet property="waveContainer" destination="MpF-FV-GLH" id="hB1-Mk-lZn"/>
+                        <outletCollection property="stationButtonCollection" destination="1ry-OZ-JpU" collectionClass="NSMutableArray" id="YAV-bS-K5E"/>
+                        <outletCollection property="stationButtonCollection" destination="ClT-Vj-VGN" collectionClass="NSMutableArray" id="cuJ-au-OEK"/>
+                        <outletCollection property="stationButtonCollection" destination="A44-xa-gmU" collectionClass="NSMutableArray" id="jQH-Z7-yBq"/>
+                        <outletCollection property="stationButtonCollection" destination="YW1-aP-GQ9" collectionClass="NSMutableArray" id="dwO-JI-Spz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uam-f8-plA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2685" y="399"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Classical" width="5904" height="2520"/>
+        <image name="dark" width="2560" height="1600"/>
+    </resources>
+</document>

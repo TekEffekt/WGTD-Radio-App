@@ -3,3 +3,8 @@
 //
 
 #import "ViewController.h"
+#import "WaveView.h"
+#import "STKAudioPlayer.h"
+#import "FSAudioStream.h"
+#import "Reachability.h"
+#import "JFMinimalNotification.h"
