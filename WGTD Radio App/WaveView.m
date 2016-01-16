@@ -92,7 +92,7 @@ static const CGFloat kDefaultSecondaryLineWidth = 1.0f;
 		CGFloat width = CGRectGetWidth(self.bounds);
 		CGFloat mid = width / 2.0f;
 		
-		const CGFloat maxAmplitude = halfHeight - 4.0f; // 4 corresponds to twice the stroke width
+		const CGFloat maxAmplitude = halfHeight - 4.0f;
 		
 		// Progress is a value between 1.0 and -0.5, determined by the current wave idx, which is used to alter the wave's amplitude.
 		CGFloat progress = 1.0f - (CGFloat)i / self.numberOfWaves;
@@ -102,7 +102,6 @@ static const CGFloat kDefaultSecondaryLineWidth = 1.0f;
 		[[self.waveColor colorWithAlphaComponent:multiplier * CGColorGetAlpha(self.waveColor.CGColor)] set];
 		
 		for (CGFloat x = 0; x<width + self.density; x += self.density) {
-			// We use a parable to scale the sinus wave, that has its peak in the middle of the view.
 			CGFloat scaling = -pow(1 / mid * (x - mid), 2) + 1;
 			
 			CGFloat y = scaling * maxAmplitude * normedAmplitude * sinf(2 * M_PI *(x / width) * self.frequency + self.phase) + halfHeight;

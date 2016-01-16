@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
-//#import "GAIFields.h"
-//#import "GAI.h"
+#import "GAIFields.h"
+#import "GAI.h"
 #import "Networking.h"
 
 @interface AppDelegate ()
@@ -23,17 +23,17 @@
     NSError* error;
     
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&error];
-//    
-//    [GAI sharedInstance].trackUncaughtExceptions = YES;
-//    
-//    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
-//    [GAI sharedInstance].dispatchInterval = 20;
-//    
-//    // Optional: set Logger to VERBOSE for debug information.
-//    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
-//    
-//    // Initialize tracker. Replace with your tracking ID.
-//    [[GAI sharedInstance] trackerWithTrackingId:@"UA-63784829-1"];
+    
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    
+    // Optional: set Logger to VERBOSE for debug information.
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    
+    // Initialize tracker. Replace with your tracking ID.
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-63784829-1"];
     
     if([[NSUserDefaults standardUserDefaults] valueForKey:@"Api Key"] == nil)
     {

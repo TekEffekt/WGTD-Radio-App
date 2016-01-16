@@ -11,7 +11,7 @@ import Foundation
 
 @objc class ChannelDropdown: UIView, UIGestureRecognizerDelegate
 {
-    static let DROP_DOWN_CHANNEL_HEIGHT:CGFloat = 70
+    static let DROP_DOWN_CHANNEL_HEIGHT: CGFloat = 44
     
     var master: ViewController?
     
@@ -88,14 +88,20 @@ import Foundation
         
         arrow = UIButton()
         arrow!.frame = CGRectMake(titleText!.frame.origin.x + titleText!.frame.size.width + 2, titleText!.frame.origin.y + titleText!.frame.size.height/2 - 7, 16, 16)
-        arrow!.setImage(UIImage(named: "direction"), forState: UIControlState.Normal)
-        arrow!.transform = CGAffineTransformRotate(arrow!.transform, CGFloat(M_PI * 0.5))
+        arrow!.setImage(UIImage(named: "arrow"), forState: UIControlState.Normal)
+//        arrow!.transform = CGAffineTransformRotate(arrow!.transform, CGFloat(M_PI * 0.5))
         self.addSubview(arrow!)
         
         arrow!.addTarget(self, action: "moveMenu", forControlEvents: UIControlEvents.TouchUpInside)
         
         self.tableHeight = tableHeight
-        self.dropDistance = self.tableHeight! + ChannelDropdown.DROP_DOWN_CHANNEL_HEIGHT
+        self.dropDistance = self.tableHeight! + ChannelDropdown.DROP_DOWN_CHANNEL_HEIGHT + 20
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: "moveMenu")
+        blur!.addGestureRecognizer(tapGesture)
+        
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: "moveMenu")
+        tableBackground!.addGestureRecognizer(tapGesture2)
     }
     
     func moveMenu()
@@ -103,6 +109,8 @@ import Foundation
         if !menuDown
         {
            showMenu()
+        } else {
+            tappedChannel((self.titleText?.text)!)
         }
     }
     
@@ -114,7 +122,7 @@ import Foundation
         line!.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.3)
         self.addSubview(line!)
         
-        UIView.animateWithDuration(0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.6 , options: [], animations: { () -> Void in
+        UIView.animateWithDuration(0.4, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.6 , options: [], animations: { () -> Void in
             self.menuTable!.frame.origin.y = self.menuTable!.frame.origin.y + self.dropDistance!
             self.tableBackground!.frame.origin.y = self.tableBackground!.frame.origin.y + self.dropDistance!
             }, completion: nil)
@@ -135,7 +143,7 @@ import Foundation
             self.menuTable!.frame.origin.y = self.menuTable!.frame.origin.y + 15
             self.tableBackground!.frame.origin.y = self.tableBackground!.frame.origin.y + 15
             }) { (Bool) -> Void in
-                UIView.animateWithDuration(0.4, animations: { () -> Void in
+                UIView.animateWithDuration(0.25, animations: { () -> Void in
                     self.menuTable!.frame.origin.y = self.menuTable!.frame.origin.y + -(self.dropDistance!) + -15
                     self.tableBackground!.frame.origin.y = self.tableBackground!.frame.origin.y + -(self.dropDistance!) + -15
                 })
@@ -169,7 +177,7 @@ import Foundation
             super.init(frame: frame, style: style)
             self.dataSource = self
             self.delegate = self
-            //self.separatorColor = UIColor.clearColor()
+            self.separatorColor = UIColor.clearColor()
         }
         
         required init?(coder aDecoder: NSCoder) {
@@ -180,7 +188,6 @@ import Foundation
             let cell = UITableViewCell(frame: CGRectMake(0, 0, super.frame.width, ChannelDropdown.DROP_DOWN_CHANNEL_HEIGHT))
             cell.backgroundColor = self.cellColor
             let text = UILabel()
-            print(indexPath.row)
             text.text = items![indexPath.row]
             text.font = UIFont(descriptor: UIFontDescriptor(name: "Helvetica Neue Thin", size: 20), size: 25)
             text.textColor = UIColor.whiteColor()
@@ -200,7 +207,6 @@ import Foundation
         }
         
         func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-            print("What")
             self.masterView!.tappedChannel(self.items![indexPath.row])
         }
         

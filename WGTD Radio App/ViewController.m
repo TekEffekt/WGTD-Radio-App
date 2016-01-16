@@ -13,12 +13,12 @@
 #import "FSAudioStream.h"
 #import "Reachability.h"
 #import "JFMinimalNotification.h"
-//#import "GAI.h"
-//#import "GAIFields.h"
-//#import "GAIDictionaryBuilder.h"
+#import "GAI.h"
+#import "GAIFields.h"
+#import "GAIDictionaryBuilder.h"
 #import "Networking.h"
 #import "XMLDictionary.h"
-//#import "WGTD-Swift.h"
+#import "WGTD-Swift.h"
 
 #define BlockWeakObject(o) __typeof(o) __weak
 #define BlockWeakSelf BlockWeakObject(self)
@@ -56,7 +56,7 @@
 
 @property(strong, nonatomic) JFMinimalNotification *notification;
 
-//@property(strong, nonatomic) ChannelDropdown *dropdown;
+@property(strong, nonatomic) ChannelDropdown *dropdown;
 
 @end
 
@@ -91,9 +91,9 @@
     [super viewWillAppear:animated];
     [self setupViews];
     
-    //self.dropdown = [[ChannelDropdown alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) items:@[@"Classical",@"Jazz",@"Reading",@"Sports"] title:@"Classical" nav: self.navigationController];
-    //self.dropdown.master = self;
-    //[self.navigationController.view addSubview:self.dropdown];
+    self.dropdown = [[ChannelDropdown alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) items:@[@"Classical",@"Jazz",@"Reading",@"Sports"] title:@"Classical" nav: self.navigationController];
+    self.dropdown.master = self;
+    [self.navigationController.view addSubview:self.dropdown];
 }
 
 - (void)viewDidLayoutSubviews
@@ -162,12 +162,12 @@
 
 - (void)setupGoogleAnalytics
 {
-//    id tracker = [[GAI sharedInstance] defaultTracker];
-//    
-//    [tracker set:kGAIScreenName value:@"Main Screen"];
-//    
-//    // manual screen tracking
-//    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName value:@"Main Screen"];
+    
+    // manual screen tracking
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)scheduleWaveAndAdTimers
@@ -181,7 +181,7 @@
     self.channels = @[@"http://media.gtc.edu:8000/stream", @"http://199.255.3.11:88/broadwave.mp3?src=1&rate=1&ref=http%3A%2F%2Fwww.wgtd.org%2Fhd2.asp",
                       @"http://199.255.3.11:88/broadwave.mp3?src=4&rate=1&ref=http%3A%2F%2Fwww.wgtd.org%2Freading.asp",
                       @"http://sportsweb.gtc.edu:8000/stream"];
-    self.channelLabelTexts = @[@"Classical Radio", @"Jazz Radio", @"Reading Service", @"Sportsweb Radio"];
+    self.channelLabelTexts = @[@"Classical", @"Jazz", @"Reading", @"Sports"];
     self.skipButtonLabelText = @[@"Classical", @"Jazz", @"Reading", @"Sportsweb"];
     self.stationImageNames = @[@"Classical", @"Jazz", @"Reading", @"Sports"];
     
@@ -296,8 +296,6 @@
         
         self.playing = NO;
         self.streamReady = NO;
-        
-        
     }
     
     if(self.notification)
@@ -380,6 +378,7 @@
     self.stationImage.image = [UIImage imageNamed:self.stationImageNames[self.channelIndex]];
 
     self.audioPlayer.url = [NSURL URLWithString:self.channels[self.channelIndex]];
+    self.dropdown.titleText.text = self.channelLabelTexts[self.channelIndex];
     
     if(self.playing)
     {
