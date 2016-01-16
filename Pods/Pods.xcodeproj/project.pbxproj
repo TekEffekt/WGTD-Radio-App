@@ -8,43 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		1FD6CD128148D90093411BA7F616C554 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		AC2FCDCC1C49DC9D6D6E7F59411AAAA4 /* Pods-WGTD TV-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBE04A7E62F13ECC4D412013A417628 /* Pods-WGTD TV-dummy.m */; };
-		CBBD9D7F4D91059D63D8114D8C346BC7 /* Pods-WGTD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0097298DD4578CF69195399B0A30B8D /* Pods-WGTD-dummy.m */; };
-		E67E685DE63583541539CFA977C724CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		CBBD9D7F4D91059D63D8114D8C346BC7 /* Pods-WGTD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3972822311B6D4E308CC149D84C10F /* Pods-WGTD-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07A0C769A837375BBE2BF8B10E7B8D6A /* GGLContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLContext.h; path = Headers/GGLCore/Public/GGLContext.h; sourceTree = "<group>"; };
 		0D3E786B712E2A055480819E7DFAC142 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceFields.h; path = Headers/Public/GAIEcommerceFields.h; sourceTree = "<group>"; };
-		0F7785F141D499B4FBD91E1E37178409 /* Pods-WGTD TV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WGTD TV.release.xcconfig"; sourceTree = "<group>"; };
+		0E8A8CC90F1399BFECBF29487851A132 /* libPods-WGTD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WGTD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1489163E3858CE7F51AD711517A9F8D7 /* libGTM_UIFont+LineHeight.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libGTM_UIFont+LineHeight.a"; path = "Libraries/libGTM_UIFont+LineHeight.a"; sourceTree = "<group>"; };
 		187E566E0294521FDFD290178F37FA90 /* libGSDK_Overload.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGSDK_Overload.a; path = Libraries/libGSDK_Overload.a; sourceTree = "<group>"; };
 		1EC4790E1FA673FB778C7ABC0B13678A /* AppInvite-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AppInvite-Module.h"; path = "Headers/ModuleHeaders/AppInvite-Module.h"; sourceTree = "<group>"; };
 		27D1BAF110521429D7645D5457218232 /* GAIFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIFields.h; path = Headers/Public/GAIFields.h; sourceTree = "<group>"; };
+		2D8C8EACFAA590483E65B0DAD16BD795 /* Pods-WGTD-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WGTD-resources.sh"; sourceTree = "<group>"; };
 		349EFCA369309942105A66D836AA76FC /* libGTM_NSDictionary+URLArguments.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libGTM_NSDictionary+URLArguments.a"; path = "Libraries/libGTM_NSDictionary+URLArguments.a"; sourceTree = "<group>"; };
-		372E93230293AE0B9E605A795F7A653D /* Pods-WGTD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WGTD.debug.xcconfig"; sourceTree = "<group>"; };
-		389C5F6A7C59DC153D9CA09D842E8280 /* Pods-WGTD TV-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WGTD TV-resources.sh"; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3F55A20685A2FCEF5130ABD957992688 /* libGTM_NSData+zlib.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libGTM_NSData+zlib.a"; path = "Libraries/libGTM_NSData+zlib.a"; sourceTree = "<group>"; };
+		42A6F865BC0E4C281C366F91CDCC622A /* Pods-WGTD-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WGTD-acknowledgements.markdown"; sourceTree = "<group>"; };
 		45F90A8B807DAAF7BEA65FEFC57EB90F /* GGLContext+Analytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GGLContext+Analytics.h"; path = "Headers/GGLAnalytics/Public/GGLContext+Analytics.h"; sourceTree = "<group>"; };
-		49573476AAEB7A8EFDA8EB238D23FC45 /* Pods-WGTD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WGTD.release.xcconfig"; sourceTree = "<group>"; };
-		52FFB55C5CCCF96D0AD3E79918316ACA /* Pods-WGTD-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WGTD-frameworks.sh"; sourceTree = "<group>"; };
+		5051FE6D80F8470232831E8E91D7DE55 /* Pods-WGTD-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WGTD-frameworks.sh"; sourceTree = "<group>"; };
 		5F0DCF423550699932FFC5AF36174E59 /* libGTM_core.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_core.a; path = Libraries/libGTM_core.a; sourceTree = "<group>"; };
-		5F896DBDB3BE3F393AB16C992E827BB5 /* Pods-WGTD-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WGTD-acknowledgements.plist"; sourceTree = "<group>"; };
 		62036BE38980975707808C6D09D78742 /* libGTM_DebugUtils.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_DebugUtils.a; path = Libraries/libGTM_DebugUtils.a; sourceTree = "<group>"; };
 		6850B748FE140ED4BA566DAB166194BE /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProduct.h; path = Headers/Public/GAIEcommerceProduct.h; sourceTree = "<group>"; };
 		69A0F5C07199DA64F55BA5EEF3C5F283 /* libGGLAnalytics.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGGLAnalytics.a; path = Libraries/libGGLAnalytics.a; sourceTree = "<group>"; };
-		6A989209F29964149F7B95CBFF8B5D64 /* Pods-WGTD-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WGTD-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6B3972822311B6D4E308CC149D84C10F /* Pods-WGTD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WGTD-dummy.m"; sourceTree = "<group>"; };
 		6D88ECCFC66A8160CFB428B64C86E3C5 /* libGTM_AddressBook.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_AddressBook.a; path = Libraries/libGTM_AddressBook.a; sourceTree = "<group>"; };
-		7007B33B040DA9A237C5F555BDA6FCCC /* Pods-WGTD-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WGTD-resources.sh"; sourceTree = "<group>"; };
 		75CCB2DDF87EF0580146D57721DCEF42 /* Analytics-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Analytics-Module.h"; path = "Headers/ModuleHeaders/Analytics-Module.h"; sourceTree = "<group>"; };
+		76AB0697DB1819F6A79E7DA5CF6C46C0 /* Pods-WGTD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WGTD.release.xcconfig"; sourceTree = "<group>"; };
 		78BD0D1C018CCC1C09862E9F2504F136 /* GGLErrorCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLErrorCode.h; path = Headers/GGLCore/Public/GGLErrorCode.h; sourceTree = "<group>"; };
 		798220ACFE51A0AA5ADAE734BD41A6B8 /* AdMob-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AdMob-Module.h"; path = "Headers/ModuleHeaders/AdMob-Module.h"; sourceTree = "<group>"; };
+		7B99E2DF2CD3F483CDD551D828F089D7 /* Pods-WGTD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WGTD.debug.xcconfig"; sourceTree = "<group>"; };
 		7E9346BC804C2A08637F9A8A7F51E47E /* libGTM_NSStringHTML.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_NSStringHTML.a; path = Libraries/libGTM_NSStringHTML.a; sourceTree = "<group>"; };
+		7F36DF2DE0DB88C076BCD00F729F3024 /* Pods-WGTD-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WGTD-acknowledgements.plist"; sourceTree = "<group>"; };
 		852BBCD04F3D998CD5A47C919DBBF35E /* GAILogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAILogger.h; path = Headers/Public/GAILogger.h; sourceTree = "<group>"; };
 		8627AB74FD8B546C94CE85AB32D480B2 /* libGTMSessionFetcher_full.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTMSessionFetcher_full.a; path = Libraries/libGTMSessionFetcher_full.a; sourceTree = "<group>"; };
 		895C86CDD807304182D47B855EDCE473 /* libGTM_StringEncoding.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_StringEncoding.a; path = Libraries/libGTM_StringEncoding.a; sourceTree = "<group>"; };
-		89E39ADBAF545A4DCBA4A28D43A20AB0 /* Pods-WGTD TV-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WGTD TV-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8B0E1636DF3C5D33B301C9134B676446 /* Core-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Core-Module.h"; path = "Headers/ModuleHeaders/Core-Module.h"; sourceTree = "<group>"; };
 		8F90DBFD8C349CFF196C62A5CEE33A8F /* libGoogleAnalytics.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = Libraries/libGoogleAnalytics.a; sourceTree = "<group>"; };
 		928A6AA3059242DB550C61E482CCC489 /* GAI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = Headers/Public/GAI.h; sourceTree = "<group>"; };
@@ -52,9 +49,7 @@
 		95D4B1A47B980426619B625BAD800ED6 /* SignIn-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SignIn-Module.h"; path = "Headers/ModuleHeaders/SignIn-Module.h"; sourceTree = "<group>"; };
 		9DDCC54000A9F58BAF52F5E5CAC43AC0 /* libGTM_NSStringXML.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_NSStringXML.a; path = Libraries/libGTM_NSStringXML.a; sourceTree = "<group>"; };
 		A09B505FEF705F19ABE4751B6E40302F /* libProtocolBuffers.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libProtocolBuffers.a; path = Libraries/libProtocolBuffers.a; sourceTree = "<group>"; };
-		A14C0EB01E646EB5A29AF46B34A69473 /* Pods-WGTD TV-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WGTD TV-frameworks.sh"; sourceTree = "<group>"; };
 		A33C4F723CCAFC08352A51CFEE7C53BE /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProductAction.h; path = Headers/Public/GAIEcommerceProductAction.h; sourceTree = "<group>"; };
-		ABBE04A7E62F13ECC4D412013A417628 /* Pods-WGTD TV-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WGTD TV-dummy.m"; sourceTree = "<group>"; };
 		B9D3617014BCFA1A57074906FC0F49CC /* GGLConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLConfiguration.h; path = Headers/GGLCore/Public/GGLConfiguration.h; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BAA22EC498C679492811A965C81BA784 /* libGTM_KVO.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_KVO.a; path = Libraries/libGTM_KVO.a; sourceTree = "<group>"; };
@@ -66,30 +61,17 @@
 		C76A503FB153DC7E92B0B06BB6E6C559 /* libGTMStackTrace.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTMStackTrace.a; path = Libraries/libGTMStackTrace.a; sourceTree = "<group>"; };
 		C7DA2E3BB8AF5F7AC968168156A86EF1 /* Analytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Analytics.h; path = Headers/GGLAnalytics/Public/Analytics.h; sourceTree = "<group>"; };
 		C953FAD4901A997C9EAF2E03CA565C7F /* libGTM_GTMURLBuilder.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_GTMURLBuilder.a; path = Libraries/libGTM_GTMURLBuilder.a; sourceTree = "<group>"; };
-		C9C06F9CED5BDFCA18D9FE49BC920DD0 /* libPods-WGTD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WGTD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC09B53297568EF4DF9A6D88F0E1D2F5 /* Core.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Core.h; path = Headers/GGLCore/Public/Core.h; sourceTree = "<group>"; };
 		D5F2598256F8AB2C47FF9429DF31F4CC /* libGTMSessionFetcher_core.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTMSessionFetcher_core.a; path = Libraries/libGTMSessionFetcher_core.a; sourceTree = "<group>"; };
-		DBA62E0D502591C4A61F080590BA700C /* libPods-WGTD TV.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WGTD TV.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3889EEF1D02A0C09E66875B74ECE6D8 /* GAITracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = Headers/Public/GAITracker.h; sourceTree = "<group>"; };
 		E40E6377146AAFD32595FF48B10EA505 /* libGGLCore.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGGLCore.a; path = Libraries/libGGLCore.a; sourceTree = "<group>"; };
-		E9890326505A7A349E1326489EDE01B0 /* Pods-WGTD TV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WGTD TV.debug.xcconfig"; sourceTree = "<group>"; };
 		EC7D18F4359501F9C15A0D6CE7EFE22A /* GAITrackedViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = Headers/Public/GAITrackedViewController.h; sourceTree = "<group>"; };
-		ED072AC3F4F8B1F27924FEF1DD689CFB /* Pods-WGTD TV-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WGTD TV-acknowledgements.plist"; sourceTree = "<group>"; };
-		F0097298DD4578CF69195399B0A30B8D /* Pods-WGTD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WGTD-dummy.m"; sourceTree = "<group>"; };
 		F14ACF0A01AB3E7C81D323300952EC50 /* libGTM_SystemVersion.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_SystemVersion.a; path = Libraries/libGTM_SystemVersion.a; sourceTree = "<group>"; };
 		FB13BEF6AD503A0D46EC61D891B483ED /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommercePromotion.h; path = Headers/Public/GAIEcommercePromotion.h; sourceTree = "<group>"; };
 		FEF2C6481BFEF27B6E061043F66FD2B1 /* GMRConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMRConfiguration.h; path = Headers/GGLCore/Public/GMRConfiguration.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		99290132651F90C6FA1FDEE77AB07900 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E67E685DE63583541539CFA977C724CA /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AF5BD456B81D0034507F4BF6B7397F2D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -110,11 +92,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2609DD1564E9448484E6F9CBDC47114F /* Targets Support Files */ = {
+		205441014C2C1F57FB64648F266BE352 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				FE297EDC2533DF2605E4D4EF2354BCF1 /* Pods-WGTD */,
-				37BD5106F4D2B945317368277D793C20 /* Pods-WGTD TV */,
+				A84B814416EEABEEE077D088802DC050 /* Pods-WGTD */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -135,21 +116,6 @@
 				E97EDF2F27A40E9442A03C07CBF75671 /* Frameworks */,
 			);
 			path = GoogleAnalytics;
-			sourceTree = "<group>";
-		};
-		37BD5106F4D2B945317368277D793C20 /* Pods-WGTD TV */ = {
-			isa = PBXGroup;
-			children = (
-				89E39ADBAF545A4DCBA4A28D43A20AB0 /* Pods-WGTD TV-acknowledgements.markdown */,
-				ED072AC3F4F8B1F27924FEF1DD689CFB /* Pods-WGTD TV-acknowledgements.plist */,
-				ABBE04A7E62F13ECC4D412013A417628 /* Pods-WGTD TV-dummy.m */,
-				A14C0EB01E646EB5A29AF46B34A69473 /* Pods-WGTD TV-frameworks.sh */,
-				389C5F6A7C59DC153D9CA09D842E8280 /* Pods-WGTD TV-resources.sh */,
-				E9890326505A7A349E1326489EDE01B0 /* Pods-WGTD TV.debug.xcconfig */,
-				0F7785F141D499B4FBD91E1E37178409 /* Pods-WGTD TV.release.xcconfig */,
-			);
-			name = "Pods-WGTD TV";
-			path = "Target Support Files/Pods-WGTD TV";
 			sourceTree = "<group>";
 		};
 		3B24B49C3B79C5C60273AE177DC66FFD /* Analytics */ = {
@@ -189,23 +155,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		78DED6DFC4968D242B61F974C3E83697 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C9C06F9CED5BDFCA18D9FE49BC920DD0 /* libPods-WGTD.a */,
-				DBA62E0D502591C4A61F080590BA700C /* libPods-WGTD TV.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				BA30C8070E85288ED6FF503707EF6CC4 /* Pods */,
-				78DED6DFC4968D242B61F974C3E83697 /* Products */,
-				2609DD1564E9448484E6F9CBDC47114F /* Targets Support Files */,
+				B76B89CE505431AC47AE071B73566841 /* Products */,
+				205441014C2C1F57FB64648F266BE352 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -255,6 +212,29 @@
 				C76A503FB153DC7E92B0B06BB6E6C559 /* libGTMStackTrace.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A84B814416EEABEEE077D088802DC050 /* Pods-WGTD */ = {
+			isa = PBXGroup;
+			children = (
+				42A6F865BC0E4C281C366F91CDCC622A /* Pods-WGTD-acknowledgements.markdown */,
+				7F36DF2DE0DB88C076BCD00F729F3024 /* Pods-WGTD-acknowledgements.plist */,
+				6B3972822311B6D4E308CC149D84C10F /* Pods-WGTD-dummy.m */,
+				5051FE6D80F8470232831E8E91D7DE55 /* Pods-WGTD-frameworks.sh */,
+				2D8C8EACFAA590483E65B0DAD16BD795 /* Pods-WGTD-resources.sh */,
+				7B99E2DF2CD3F483CDD551D828F089D7 /* Pods-WGTD.debug.xcconfig */,
+				76AB0697DB1819F6A79E7DA5CF6C46C0 /* Pods-WGTD.release.xcconfig */,
+			);
+			name = "Pods-WGTD";
+			path = "Target Support Files/Pods-WGTD";
+			sourceTree = "<group>";
+		};
+		B76B89CE505431AC47AE071B73566841 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0E8A8CC90F1399BFECBF29487851A132 /* libPods-WGTD.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		BA30C8070E85288ED6FF503707EF6CC4 /* Pods */ = {
@@ -335,40 +315,9 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FE297EDC2533DF2605E4D4EF2354BCF1 /* Pods-WGTD */ = {
-			isa = PBXGroup;
-			children = (
-				6A989209F29964149F7B95CBFF8B5D64 /* Pods-WGTD-acknowledgements.markdown */,
-				5F896DBDB3BE3F393AB16C992E827BB5 /* Pods-WGTD-acknowledgements.plist */,
-				F0097298DD4578CF69195399B0A30B8D /* Pods-WGTD-dummy.m */,
-				52FFB55C5CCCF96D0AD3E79918316ACA /* Pods-WGTD-frameworks.sh */,
-				7007B33B040DA9A237C5F555BDA6FCCC /* Pods-WGTD-resources.sh */,
-				372E93230293AE0B9E605A795F7A653D /* Pods-WGTD.debug.xcconfig */,
-				49573476AAEB7A8EFDA8EB238D23FC45 /* Pods-WGTD.release.xcconfig */,
-			);
-			name = "Pods-WGTD";
-			path = "Target Support Files/Pods-WGTD";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		26E2BE00D11D88CD7B929FD6C97D7D89 /* Pods-WGTD TV */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1A198A84CF6A9FCA24F9721E5DBC237B /* Build configuration list for PBXNativeTarget "Pods-WGTD TV" */;
-			buildPhases = (
-				3A908EB2DDBBC4E8F0EBE26F38EDF837 /* Sources */,
-				99290132651F90C6FA1FDEE77AB07900 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-WGTD TV";
-			productName = "Pods-WGTD TV";
-			productReference = DBA62E0D502591C4A61F080590BA700C /* libPods-WGTD TV.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		FF7833FFFED75224FB83FEEDE5A59E08 /* Pods-WGTD */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8F37C65A0C9B46B0B57A89366791C2E /* Build configuration list for PBXNativeTarget "Pods-WGTD" */;
@@ -382,7 +331,7 @@
 			);
 			name = "Pods-WGTD";
 			productName = "Pods-WGTD";
-			productReference = C9C06F9CED5BDFCA18D9FE49BC920DD0 /* libPods-WGTD.a */;
+			productReference = 0E8A8CC90F1399BFECBF29487851A132 /* libPods-WGTD.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -402,25 +351,16 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 78DED6DFC4968D242B61F974C3E83697 /* Products */;
+			productRefGroup = B76B89CE505431AC47AE071B73566841 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				FF7833FFFED75224FB83FEEDE5A59E08 /* Pods-WGTD */,
-				26E2BE00D11D88CD7B929FD6C97D7D89 /* Pods-WGTD TV */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3A908EB2DDBBC4E8F0EBE26F38EDF837 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AC2FCDCC1C49DC9D6D6E7F59411AAAA4 /* Pods-WGTD TV-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		90A75439CFCBD99D69B27B0FC56259A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -432,26 +372,9 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		1504389A645A0EC108A6E0C0561046D8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E9890326505A7A349E1326489EDE01B0 /* Pods-WGTD TV.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
 		3C3FC7E34D084387F603C801355D89CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 372E93230293AE0B9E605A795F7A653D /* Pods-WGTD.debug.xcconfig */;
+			baseConfigurationReference = 7B99E2DF2CD3F483CDD551D828F089D7 /* Pods-WGTD.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -505,26 +428,9 @@
 			};
 			name = Debug;
 		};
-		BC3FDAE3205BA793233622D056BDF40C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F7785F141D499B4FBD91E1E37178409 /* Pods-WGTD TV.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		DB2CA2D874BDBA95B63D99B9CC161253 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 49573476AAEB7A8EFDA8EB238D23FC45 /* Pods-WGTD.release.xcconfig */;
+			baseConfigurationReference = 76AB0697DB1819F6A79E7DA5CF6C46C0 /* Pods-WGTD.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -576,15 +482,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1A198A84CF6A9FCA24F9721E5DBC237B /* Build configuration list for PBXNativeTarget "Pods-WGTD TV" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1504389A645A0EC108A6E0C0561046D8 /* Debug */,
-				BC3FDAE3205BA793233622D056BDF40C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

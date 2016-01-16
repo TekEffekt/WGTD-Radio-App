@@ -29,15 +29,10 @@
 #import "UIColor+JFMinimalNotificationColors.h"
 #import "NSInvocation+Constructors.h"
 
-//static CGFloat const kNotificationViewHeight = 150.0f;
-//static CGFloat const kNotificationTitleLabelHeight = 20.0f;
-//static CGFloat const kNotificationPadding = 10.0f;
-//static CGFloat const kNotificationAccessoryPadding = 80.0f;
-
-static CGFloat const kNotificationViewHeight = 85.0f;
-static CGFloat const kNotificationTitleLabelHeight = 20.0f;
-static CGFloat const kNotificationPadding = 20.0f;
-static CGFloat const kNotificationAccessoryPadding = 10.0f;
+static CGFloat kNotificationViewHeight = 85.0f;
+static CGFloat kNotificationTitleLabelHeight = 20.0f;
+static CGFloat kNotificationPadding = 20.0f;
+static CGFloat kNotificationAccessoryPadding = 10.0f;
 
 @interface JFMinimalNotification()
 
@@ -129,6 +124,13 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
 
 - (instancetype)initWithStyle:(JFMinimalNotificationStytle)style title:(NSString*)title subTitle:(NSString*)subTitle
 {
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomTV) {
+        kNotificationViewHeight = 150.0f;
+        kNotificationTitleLabelHeight = 20.0f;
+        kNotificationPadding = 10.0f;
+        kNotificationAccessoryPadding = 80.0f;
+    }
+    
     if (self = [super init]) {
         
         self.translatesAutoresizingMaskIntoConstraints = NO;

@@ -6,35 +6,20 @@
 //  Copyright (c) 2015 University Of Wiscosnin Parkside. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "AppDelegateTV.h"
 #import "Networking.h"
-#import "GAIFields.h"
-#import "GAI.h"
 
-@interface AppDelegate ()
+@interface AppDelegateTV ()
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegateTV
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
     NSError* error;
-    
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&error];
-    
-    [GAI sharedInstance].trackUncaughtExceptions = YES;
-    
-    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
-    [GAI sharedInstance].dispatchInterval = 20;
-    
-    // Optional: set Logger to VERBOSE for debug information.
-    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
-    
-    // Initialize tracker. Replace with your tracking ID.
-    [[GAI sharedInstance] trackerWithTrackingId:@"UA-63784829-1"];
     
     if([[NSUserDefaults standardUserDefaults] valueForKey:@"Api Key"] == nil)
     {

@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-WGTD TV.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-WGTD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,11 +12,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>26E2BE00D11D88CD7B929FD6C97D7D89</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>FF7833FFFED75224FB83FEEDE5A59E08</key>
 		<dict>
 			<key>primary</key>

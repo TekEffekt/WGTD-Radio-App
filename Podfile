@@ -3,11 +3,8 @@
 # Uncomment this line if you're using Swift
 # use_frameworks!
 
-target 'WGTD' do
-pod 'Google/Analytics'
-end
 
-target 'WGTD TV' do
+target 'WGTD' do
 pod 'Google/Analytics'
 end
 

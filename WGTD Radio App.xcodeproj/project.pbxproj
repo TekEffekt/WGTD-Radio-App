@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		B60651FA1AC31550008300D8 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60651F91AC31550008300D8 /* InfoViewController.m */; };
 		B609C7181B27BF890093EB04 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B609C7171B27BF890093EB04 /* CoreData.framework */; };
-		B609C71A1B27BF900093EB04 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B609C7191B27BF900093EB04 /* SystemConfiguration.framework */; };
-		B609C71C1B27BFA00093EB04 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B609C71B1B27BFA00093EB04 /* libz.dylib */; };
-		B609C71E1B27BFAE0093EB04 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B609C71D1B27BFAE0093EB04 /* libsqlite3.dylib */; };
 		B60E36791B0FF73F004C142C /* audio_queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B60E36671B0FF73F004C142C /* audio_queue.cpp */; };
 		B60E367A1B0FF73F004C142C /* audio_stream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B60E36691B0FF73F004C142C /* audio_stream.cpp */; };
 		B60E367B1B0FF73F004C142C /* caching_stream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B60E366B1B0FF73F004C142C /* caching_stream.cpp */; };
@@ -29,7 +26,6 @@
 		B60E36961B0FF748004C142C /* FSPlaylistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E368E1B0FF748004C142C /* FSPlaylistItem.m */; };
 		B60E36971B0FF748004C142C /* FSXMLHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E36901B0FF748004C142C /* FSXMLHttpRequest.m */; };
 		B60E36991B0FFA49004C142C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60E36981B0FFA49004C142C /* CFNetwork.framework */; };
-		B60E369B1B0FFAAD004C142C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B60E369A1B0FFAAD004C142C /* libxml2.dylib */; };
 		B60E369D1B0FFABB004C142C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60E369C1B0FFABB004C142C /* MediaPlayer.framework */; };
 		B60E36A21B0FFFE5004C142C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E36A11B0FFFE5004C142C /* Reachability.m */; };
 		B60E36AE1B1281F4004C142C /* JFMinimalNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E36A51B1281F4004C142C /* JFMinimalNotification.m */; };
@@ -64,6 +60,12 @@
 		B60E53C51ABFFF440019505B /* stream.m3u in Resources */ = {isa = PBXBuildFile; fileRef = B60E53C41ABFFF440019505B /* stream.m3u */; };
 		B63F05971ADB0E450040168F /* broadwave.m3u in Resources */ = {isa = PBXBuildFile; fileRef = B63F05961ADB0E450040168F /* broadwave.m3u */; };
 		B63F05991ADB0E4A0040168F /* broadwave (1).m3u in Resources */ = {isa = PBXBuildFile; fileRef = B63F05981ADB0E4A0040168F /* broadwave (1).m3u */; };
+		B67083821C4B0A0100C618C9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67083811C4B0A0100C618C9 /* SystemConfiguration.framework */; };
+		B67083841C4B0CB500C618C9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67083831C4B0CB500C618C9 /* SystemConfiguration.framework */; };
+		B67083861C4B0E3600C618C9 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B67083851C4B0E3600C618C9 /* libxml2.tbd */; };
+		B691B19E1C4A139B0085C728 /* AppDelegateTV.m in Sources */ = {isa = PBXBuildFile; fileRef = B691B19D1C4A139B0085C728 /* AppDelegateTV.m */; };
+		B691B19F1C4A14320085C728 /* AppDelegateTV.m in Sources */ = {isa = PBXBuildFile; fileRef = B691B19D1C4A139B0085C728 /* AppDelegateTV.m */; };
+		B691B1A11C4A15E30085C728 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B691B1A01C4A15E30085C728 /* main.m */; };
 		B6DC26851BABB9830056AD3C /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DC26841BABB9830056AD3C /* Networking.m */; };
 		B6DC26891BABFD0F0056AD3C /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DC26881BABFD0F0056AD3C /* XMLDictionary.m */; };
 		B6FA9FED1BE9F34E00BC8F5F /* ChannelDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA9FEC1BE9F34E00BC8F5F /* ChannelDropdown.swift */; };
@@ -81,21 +83,17 @@
 		B6FCA84D1BFCAAC90046178C /* input_stream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B60E36751B0FF73F004C142C /* input_stream.cpp */; };
 		B6FCA84E1BFCAAC90046178C /* audio_queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B60E36671B0FF73F004C142C /* audio_queue.cpp */; };
 		B6FCA84F1BFCAAC90046178C /* FSAudioStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = B60E36861B0FF748004C142C /* FSAudioStream.mm */; };
-		B6FCA8501BFCAAC90046178C /* ChannelDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA9FEC1BE9F34E00BC8F5F /* ChannelDropdown.swift */; };
 		B6FCA8511BFCAAC90046178C /* STKDataSourceWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E53AD1ABFE14A0019505B /* STKDataSourceWrapper.m */; };
 		B6FCA8521BFCAAC90046178C /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DC26841BABB9830056AD3C /* Networking.m */; };
 		B6FCA8531BFCAAC90046178C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E36A11B0FFFE5004C142C /* Reachability.m */; };
-		B6FCA8541BFCAAC90046178C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E52F61ABFB0CB0019505B /* ViewController.m */; };
 		B6FCA8551BFCAAC90046178C /* STKHTTPDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E53AF1ABFE14A0019505B /* STKHTTPDataSource.m */; };
 		B6FCA8561BFCAAC90046178C /* FSParseRssPodcastFeedRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E368C1B0FF748004C142C /* FSParseRssPodcastFeedRequest.m */; };
 		B6FCA8571BFCAAC90046178C /* file_stream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B60E366F1B0FF73F004C142C /* file_stream.cpp */; };
 		B6FCA8581BFCAAC90046178C /* JFMinimalNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E36A51B1281F4004C142C /* JFMinimalNotification.m */; };
 		B6FCA8591BFCAAC90046178C /* STKAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E53A51ABFE14A0019505B /* STKAudioPlayer.m */; };
-		B6FCA85A1BFCAAC90046178C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E52F31ABFB0CB0019505B /* AppDelegate.m */; };
 		B6FCA85B1BFCAAC90046178C /* FSCheckContentTypeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E36881B0FF748004C142C /* FSCheckContentTypeRequest.m */; };
 		B6FCA85C1BFCAAC90046178C /* FSXMLHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E36901B0FF748004C142C /* FSXMLHttpRequest.m */; };
 		B6FCA85D1BFCAAC90046178C /* stream_configuration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B60E36771B0FF73F004C142C /* stream_configuration.cpp */; };
-		B6FCA85E1BFCAAC90046178C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E52F01ABFB0CB0019505B /* main.m */; };
 		B6FCA85F1BFCAAC90046178C /* file_output.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B60E366D1B0FF73F004C142C /* file_output.cpp */; };
 		B6FCA8601BFCAAC90046178C /* caching_stream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B60E366B1B0FF73F004C142C /* caching_stream.cpp */; };
 		B6FCA8611BFCAAC90046178C /* UIColor+JFMinimalNotificationColors.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E36AB1B1281F4004C142C /* UIColor+JFMinimalNotificationColors.m */; };
@@ -106,12 +104,8 @@
 		B6FCA8661BFCAAC90046178C /* FSAudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E36841B0FF748004C142C /* FSAudioController.m */; };
 		B6FCA8671BFCAAC90046178C /* audio_stream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B60E36691B0FF73F004C142C /* audio_stream.cpp */; };
 		B6FCA8681BFCAAC90046178C /* STKQueueEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E53B31ABFE14A0019505B /* STKQueueEntry.m */; };
-		B6FCA86A1BFCAAC90046178C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B609C71D1B27BFAE0093EB04 /* libsqlite3.dylib */; };
-		B6FCA86B1BFCAAC90046178C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B609C71B1B27BFA00093EB04 /* libz.dylib */; };
-		B6FCA86C1BFCAAC90046178C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B609C7191B27BF900093EB04 /* SystemConfiguration.framework */; };
 		B6FCA86D1BFCAAC90046178C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B609C7171B27BF890093EB04 /* CoreData.framework */; };
 		B6FCA86E1BFCAAC90046178C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60E369C1B0FFABB004C142C /* MediaPlayer.framework */; };
-		B6FCA86F1BFCAAC90046178C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B60E369A1B0FFAAD004C142C /* libxml2.dylib */; };
 		B6FCA8701BFCAAC90046178C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60E36981B0FFA49004C142C /* CFNetwork.framework */; };
 		B6FCA8711BFCAAC90046178C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60E535A1ABFB9990019505B /* Foundation.framework */; };
 		B6FCA8721BFCAAC90046178C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60E53581ABFB9940019505B /* UIKit.framework */; };
@@ -128,24 +122,21 @@
 		B6FCA8871BFCABC10046178C /* TV Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6FCA8851BFCAAFF0046178C /* TV Storyboard.storyboard */; };
 		B6FCA88B1BFCACCA0046178C /* TVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FCA88A1BFCACCA0046178C /* TVViewController.swift */; };
 		C3452FA2F46E5051FE89AE3A /* libPods-WGTD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0ED4B7B2A564BCAF96E0A9 /* libPods-WGTD.a */; };
-		FE79ABEA32574EF45F817DAD /* libPods-WGTD TV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 773AC6C42C982D5AC6B96699 /* libPods-WGTD TV.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B467F79050A89F5015401B1 /* Pods-WGTD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WGTD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WGTD/Pods-WGTD.debug.xcconfig"; sourceTree = "<group>"; };
 		0F47E372659D20EE99F03F5A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		2D0ED4B7B2A564BCAF96E0A9 /* libPods-WGTD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WGTD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB05FFB022EA0E3C4ACDC19 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		773AC6C42C982D5AC6B96699 /* libPods-WGTD TV.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WGTD TV.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C156E2C158C6F9BEF8D34E2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		AEDC07FE91359C06D4A8527A /* Pods-WGTD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WGTD.release.xcconfig"; path = "Pods/Target Support Files/Pods-WGTD/Pods-WGTD.release.xcconfig"; sourceTree = "<group>"; };
+		B073FB0D6579334FEB8C8759 /* Pods-WGTD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WGTD.release.xcconfig"; path = "Pods/Target Support Files/Pods-WGTD/Pods-WGTD.release.xcconfig"; sourceTree = "<group>"; };
 		B60651F21AC31268008300D8 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		B60651F31AC31268008300D8 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		B60651F81AC31550008300D8 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		B60651F91AC31550008300D8 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		B609C7171B27BF890093EB04 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		B609C7191B27BF900093EB04 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		B609C71B1B27BFA00093EB04 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		B609C71D1B27BFAE0093EB04 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		B60E36671B0FF73F004C142C /* audio_queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = audio_queue.cpp; sourceTree = "<group>"; };
 		B60E36681B0FF73F004C142C /* audio_queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audio_queue.h; sourceTree = "<group>"; };
 		B60E36691B0FF73F004C142C /* audio_stream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = audio_stream.cpp; sourceTree = "<group>"; };
@@ -179,7 +170,6 @@
 		B60E368F1B0FF748004C142C /* FSXMLHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSXMLHttpRequest.h; sourceTree = "<group>"; };
 		B60E36901B0FF748004C142C /* FSXMLHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSXMLHttpRequest.m; sourceTree = "<group>"; };
 		B60E36981B0FFA49004C142C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		B60E369A1B0FFAAD004C142C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		B60E369C1B0FFABB004C142C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		B60E36A01B0FFFE5004C142C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ../Reachability.h; sourceTree = "<group>"; };
 		B60E36A11B0FFFE5004C142C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../Reachability.m; sourceTree = "<group>"; };
@@ -205,8 +195,6 @@
 		B60E52F91ABFB0CB0019505B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B60E52FB1ABFB0CB0019505B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B60E52FE1ABFB0CB0019505B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		B60E53091ABFB0CC0019505B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B60E530A1ABFB0CC0019505B /* WGTD_Radio_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGTD_Radio_AppTests.m; sourceTree = "<group>"; };
 		B60E53501ABFB96D0019505B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B60E53521ABFB97A0019505B /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		B60E53541ABFB9800019505B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -237,6 +225,14 @@
 		B60E53C41ABFFF440019505B /* stream.m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream.m3u; sourceTree = "<group>"; };
 		B63F05961ADB0E450040168F /* broadwave.m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = broadwave.m3u; sourceTree = "<group>"; };
 		B63F05981ADB0E4A0040168F /* broadwave (1).m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "broadwave (1).m3u"; sourceTree = "<group>"; };
+		B65A582E1C49FA5B00C85F25 /* libPods-WGTD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-WGTD.a"; path = "Pods/../build/Debug-iphoneos/libPods-WGTD.a"; sourceTree = "<group>"; };
+		B67083811C4B0A0100C618C9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B67083831C4B0CB500C618C9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SystemConfiguration.framework; sourceTree = "<group>"; };
+		B67083851C4B0E3600C618C9 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		B691B19C1C4A139B0085C728 /* AppDelegateTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateTV.h; sourceTree = "<group>"; };
+		B691B19D1C4A139B0085C728 /* AppDelegateTV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateTV.m; sourceTree = "<group>"; };
+		B691B1A01C4A15E30085C728 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = tv/main.m; sourceTree = "<group>"; };
+		B691B1A21C4A16280085C728 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "WGTD Radio App/tv/main.m"; sourceTree = "<group>"; };
 		B6DC26831BABB9830056AD3C /* Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		B6DC26841BABB9830056AD3C /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
 		B6DC26871BABFD0F0056AD3C /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDictionary.h; sourceTree = "<group>"; };
@@ -247,7 +243,6 @@
 		B6FCA8841BFCAAC90046178C /* WGTD copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WGTD copy-Info.plist"; path = "/Users/kylez/Documents/Development/Xcode Projects/WGTD Radio App/WGTD copy-Info.plist"; sourceTree = "<absolute>"; };
 		B6FCA8851BFCAAFF0046178C /* TV Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "TV Storyboard.storyboard"; sourceTree = "<group>"; };
 		B6FCA88A1BFCACCA0046178C /* TVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVViewController.swift; sourceTree = "<group>"; };
-		F0D56873AAAC7A8C0ECF23D6 /* Pods-WGTD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WGTD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WGTD/Pods-WGTD.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,12 +250,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B609C71E1B27BFAE0093EB04 /* libsqlite3.dylib in Frameworks */,
-				B609C71C1B27BFA00093EB04 /* libz.dylib in Frameworks */,
-				B609C71A1B27BF900093EB04 /* SystemConfiguration.framework in Frameworks */,
+				B67083861C4B0E3600C618C9 /* libxml2.tbd in Frameworks */,
+				B67083821C4B0A0100C618C9 /* SystemConfiguration.framework in Frameworks */,
 				B609C7181B27BF890093EB04 /* CoreData.framework in Frameworks */,
 				B60E369D1B0FFABB004C142C /* MediaPlayer.framework in Frameworks */,
-				B60E369B1B0FFAAD004C142C /* libxml2.dylib in Frameworks */,
 				B60E36991B0FFA49004C142C /* CFNetwork.framework in Frameworks */,
 				B60E535B1ABFB99A0019505B /* Foundation.framework in Frameworks */,
 				B60E53591ABFB9940019505B /* UIKit.framework in Frameworks */,
@@ -268,6 +261,7 @@
 				B60E53551ABFB9800019505B /* AudioToolbox.framework in Frameworks */,
 				B60E53531ABFB97A0019505B /* GLKit.framework in Frameworks */,
 				B60E53511ABFB96D0019505B /* AVFoundation.framework in Frameworks */,
+				B67083841C4B0CB500C618C9 /* SystemConfiguration.framework in Frameworks */,
 				C3452FA2F46E5051FE89AE3A /* libPods-WGTD.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,12 +270,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6FCA86A1BFCAAC90046178C /* libsqlite3.dylib in Frameworks */,
-				B6FCA86B1BFCAAC90046178C /* libz.dylib in Frameworks */,
-				B6FCA86C1BFCAAC90046178C /* SystemConfiguration.framework in Frameworks */,
 				B6FCA86D1BFCAAC90046178C /* CoreData.framework in Frameworks */,
 				B6FCA86E1BFCAAC90046178C /* MediaPlayer.framework in Frameworks */,
-				B6FCA86F1BFCAAC90046178C /* libxml2.dylib in Frameworks */,
 				B6FCA8701BFCAAC90046178C /* CFNetwork.framework in Frameworks */,
 				B6FCA8711BFCAAC90046178C /* Foundation.framework in Frameworks */,
 				B6FCA8721BFCAAC90046178C /* UIKit.framework in Frameworks */,
@@ -289,7 +279,6 @@
 				B6FCA8741BFCAAC90046178C /* AudioToolbox.framework in Frameworks */,
 				B6FCA8751BFCAAC90046178C /* GLKit.framework in Frameworks */,
 				B6FCA8761BFCAAC90046178C /* AVFoundation.framework in Frameworks */,
-				FE79ABEA32574EF45F817DAD /* libPods-WGTD TV.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,8 +290,8 @@
 			children = (
 				8C156E2C158C6F9BEF8D34E2 /* Pods.debug.xcconfig */,
 				0F47E372659D20EE99F03F5A /* Pods.release.xcconfig */,
-				F0D56873AAAC7A8C0ECF23D6 /* Pods-WGTD.debug.xcconfig */,
-				AEDC07FE91359C06D4A8527A /* Pods-WGTD.release.xcconfig */,
+				0B467F79050A89F5015401B1 /* Pods-WGTD.debug.xcconfig */,
+				B073FB0D6579334FEB8C8759 /* Pods-WGTD.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -310,6 +299,9 @@
 		4F64761D0355B2EB713955DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B67083851C4B0E3600C618C9 /* libxml2.tbd */,
+				B67083811C4B0A0100C618C9 /* SystemConfiguration.framework */,
+				B65A582E1C49FA5B00C85F25 /* libPods-WGTD.a */,
 				4BB05FFB022EA0E3C4ACDC19 /* libPods.a */,
 				2D0ED4B7B2A564BCAF96E0A9 /* libPods-WGTD.a */,
 				773AC6C42C982D5AC6B96699 /* libPods-WGTD TV.a */,
@@ -383,12 +375,10 @@
 		B60E52E21ABFB0CB0019505B = {
 			isa = PBXGroup;
 			children = (
-				B609C71D1B27BFAE0093EB04 /* libsqlite3.dylib */,
-				B609C71B1B27BFA00093EB04 /* libz.dylib */,
-				B609C7191B27BF900093EB04 /* SystemConfiguration.framework */,
+				B691B1A21C4A16280085C728 /* main.m */,
+				B67083831C4B0CB500C618C9 /* SystemConfiguration.framework */,
 				B609C7171B27BF890093EB04 /* CoreData.framework */,
 				B60E369C1B0FFABB004C142C /* MediaPlayer.framework */,
-				B60E369A1B0FFAAD004C142C /* libxml2.dylib */,
 				B60E36981B0FFA49004C142C /* CFNetwork.framework */,
 				B60E535A1ABFB9990019505B /* Foundation.framework */,
 				B60E53581ABFB9940019505B /* UIKit.framework */,
@@ -397,7 +387,6 @@
 				B60E53521ABFB97A0019505B /* GLKit.framework */,
 				B60E53501ABFB96D0019505B /* AVFoundation.framework */,
 				B60E52ED1ABFB0CB0019505B /* WGTD Radio App */,
-				B60E53071ABFB0CC0019505B /* WGTD Radio AppTests */,
 				B60E52EC1ABFB0CB0019505B /* Products */,
 				235B8B6066046131D0A5FA17 /* Pods */,
 				4F64761D0355B2EB713955DF /* Frameworks */,
@@ -430,6 +419,8 @@
 				B63F05961ADB0E450040168F /* broadwave.m3u */,
 				B6DC26871BABFD0F0056AD3C /* XMLDictionary.h */,
 				B6DC26881BABFD0F0056AD3C /* XMLDictionary.m */,
+				B691B19C1C4A139B0085C728 /* AppDelegateTV.h */,
+				B691B19D1C4A139B0085C728 /* AppDelegateTV.m */,
 				B60E52F21ABFB0CB0019505B /* AppDelegate.h */,
 				B60E52F31ABFB0CB0019505B /* AppDelegate.m */,
 				B60E533F1ABFB27D0019505B /* View Controllers */,
@@ -450,24 +441,8 @@
 			isa = PBXGroup;
 			children = (
 				B60E52EF1ABFB0CB0019505B /* Info.plist */,
+				B691B1A01C4A15E30085C728 /* main.m */,
 				B60E52F01ABFB0CB0019505B /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B60E53071ABFB0CC0019505B /* WGTD Radio AppTests */ = {
-			isa = PBXGroup;
-			children = (
-				B60E530A1ABFB0CC0019505B /* WGTD_Radio_AppTests.m */,
-				B60E53081ABFB0CC0019505B /* Supporting Files */,
-			);
-			path = "WGTD Radio AppTests";
-			sourceTree = "<group>";
-		};
-		B60E53081ABFB0CC0019505B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				B60E53091ABFB0CC0019505B /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -549,12 +524,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6FCA8801BFCAAC90046178C /* Build configuration list for PBXNativeTarget "WGTD TV" */;
 			buildPhases = (
-				D25E5911A71FCF3CD5A38A29 /* Check Pods Manifest.lock */,
 				B6FCA8411BFCAAC90046178C /* Sources */,
 				B6FCA8691BFCAAC90046178C /* Frameworks */,
 				B6FCA8771BFCAAC90046178C /* Resources */,
-				5637258E2282C47F0FD84487 /* Embed Pods Frameworks */,
-				57B08793686F51F1D9C67EAC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -577,7 +549,7 @@
 				TargetAttributes = {
 					B60E52EA1ABFB0CB0019505B = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = F8BA5TMX9M;
+						DevelopmentTeam = 2T9JP2ZYVK;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -585,7 +557,7 @@
 						};
 					};
 					B6FCA8401BFCAAC90046178C = {
-						DevelopmentTeam = 9463AL9REH;
+						DevelopmentTeam = 2T9JP2ZYVK;
 					};
 				};
 			};
@@ -686,51 +658,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WGTD/Pods-WGTD-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5637258E2282C47F0FD84487 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WGTD TV/Pods-WGTD TV-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		57B08793686F51F1D9C67EAC /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WGTD TV/Pods-WGTD TV-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D25E5911A71FCF3CD5A38A29 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -738,6 +665,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B691B19F1C4A14320085C728 /* AppDelegateTV.m in Sources */,
 				B60E53BC1ABFE14A0019505B /* STKLocalFileDataSource.m in Sources */,
 				B60E53B71ABFE14A0019505B /* STKAutoRecoveringHTTPDataSource.m in Sources */,
 				B60E53C31ABFF01E0019505B /* WaveView.m in Sources */,
@@ -784,6 +712,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B691B1A11C4A15E30085C728 /* main.m in Sources */,
 				B6FCA8421BFCAAC90046178C /* STKLocalFileDataSource.m in Sources */,
 				B6FCA8431BFCAAC90046178C /* STKAutoRecoveringHTTPDataSource.m in Sources */,
 				B6FCA88B1BFCACCA0046178C /* TVViewController.swift in Sources */,
@@ -792,6 +721,7 @@
 				B6FCA8461BFCAAC90046178C /* NSMutableArray+STKAudioPlayer.m in Sources */,
 				B6FCA8471BFCAAC90046178C /* XMLDictionary.m in Sources */,
 				B6FCA8481BFCAAC90046178C /* NSInvocation+Constructors.m in Sources */,
+				B691B19E1C4A139B0085C728 /* AppDelegateTV.m in Sources */,
 				B6FCA8491BFCAAC90046178C /* STKCoreFoundationDataSource.m in Sources */,
 				B6FCA84A1BFCAAC90046178C /* JFMinimalNotificationArt.m in Sources */,
 				B6FCA84B1BFCAAC90046178C /* FSPlaylistItem.m in Sources */,
@@ -799,21 +729,17 @@
 				B6FCA84D1BFCAAC90046178C /* input_stream.cpp in Sources */,
 				B6FCA84E1BFCAAC90046178C /* audio_queue.cpp in Sources */,
 				B6FCA84F1BFCAAC90046178C /* FSAudioStream.mm in Sources */,
-				B6FCA8501BFCAAC90046178C /* ChannelDropdown.swift in Sources */,
 				B6FCA8511BFCAAC90046178C /* STKDataSourceWrapper.m in Sources */,
 				B6FCA8521BFCAAC90046178C /* Networking.m in Sources */,
 				B6FCA8531BFCAAC90046178C /* Reachability.m in Sources */,
-				B6FCA8541BFCAAC90046178C /* ViewController.m in Sources */,
 				B6FCA8551BFCAAC90046178C /* STKHTTPDataSource.m in Sources */,
 				B6FCA8561BFCAAC90046178C /* FSParseRssPodcastFeedRequest.m in Sources */,
 				B6FCA8571BFCAAC90046178C /* file_stream.cpp in Sources */,
 				B6FCA8581BFCAAC90046178C /* JFMinimalNotification.m in Sources */,
 				B6FCA8591BFCAAC90046178C /* STKAudioPlayer.m in Sources */,
-				B6FCA85A1BFCAAC90046178C /* AppDelegate.m in Sources */,
 				B6FCA85B1BFCAAC90046178C /* FSCheckContentTypeRequest.m in Sources */,
 				B6FCA85C1BFCAAC90046178C /* FSXMLHttpRequest.m in Sources */,
 				B6FCA85D1BFCAAC90046178C /* stream_configuration.cpp in Sources */,
-				B6FCA85E1BFCAAC90046178C /* main.m in Sources */,
 				B6FCA85F1BFCAAC90046178C /* file_output.cpp in Sources */,
 				B6FCA8601BFCAAC90046178C /* caching_stream.cpp in Sources */,
 				B6FCA8611BFCAAC90046178C /* UIColor+JFMinimalNotificationColors.m in Sources */,
@@ -887,7 +813,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -924,6 +850,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -931,7 +858,7 @@
 		};
 		B60E530F1ABFB0CC0019505B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0D56873AAAC7A8C0ECF23D6 /* Pods-WGTD.debug.xcconfig */;
+			baseConfigurationReference = 0B467F79050A89F5015401B1 /* Pods-WGTD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -948,6 +875,7 @@
 					"$(PROJECT_DIR)/WGTD",
 					Radio,
 					App,
+					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -967,17 +895,18 @@
 					Radio,
 					App/GoogleAnalytics,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.uwp.WGTD-Radio";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.uwp.WGTD-Radio-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WGTD Radio App/WGTD-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		B60E53101ABFB0CC0019505B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AEDC07FE91359C06D4A8527A /* Pods-WGTD.release.xcconfig */;
+			baseConfigurationReference = B073FB0D6579334FEB8C8759 /* Pods-WGTD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -994,6 +923,7 @@
 					"$(PROJECT_DIR)/WGTD",
 					Radio,
 					App,
+					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1013,16 +943,16 @@
 					Radio,
 					App/GoogleAnalytics,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.uwp.WGTD-Radio";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.uwp.WGTD-Radio-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WGTD Radio App/WGTD-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		B6FCA8811BFCAAC90046178C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0D56873AAAC7A8C0ECF23D6 /* Pods-WGTD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -1032,16 +962,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
 					"$(inherited)",
-					"$(PROJECT_DIR)/WGTD",
-					Radio,
-					App,
-					"$(PROJECT_DIR)/WGTD",
-					Radio,
-					App,
-					"$(PROJECT_DIR)/WGTD",
-					Radio,
-					App,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1054,14 +976,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/WGTD",
-					Radio,
-					App/GoogleAnalytics,
-					"$(PROJECT_DIR)/WGTD",
-					Radio,
-					App/GoogleAnalytics,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.uwp.WGTD-Radio-TV";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.uwp.WGTD-Radio-TV-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
@@ -1073,7 +989,6 @@
 		};
 		B6FCA8821BFCAAC90046178C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AEDC07FE91359C06D4A8527A /* Pods-WGTD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -1083,16 +998,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
 					"$(inherited)",
-					"$(PROJECT_DIR)/WGTD",
-					Radio,
-					App,
-					"$(PROJECT_DIR)/WGTD",
-					Radio,
-					App,
-					"$(PROJECT_DIR)/WGTD",
-					Radio,
-					App,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1105,14 +1012,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/WGTD",
-					Radio,
-					App/GoogleAnalytics,
-					"$(PROJECT_DIR)/WGTD",
-					Radio,
-					App/GoogleAnalytics,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.uwp.WGTD-Radio-TV";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.uwp.WGTD-Radio-TV-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;

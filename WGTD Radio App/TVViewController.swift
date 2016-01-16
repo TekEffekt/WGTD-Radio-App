@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ChannelDropdown
 
 class TVViewController: UIViewController {
 
